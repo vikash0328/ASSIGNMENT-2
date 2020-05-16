@@ -1,0 +1,4 @@
+{"level":"ERROR","time":"2020-05-16T11:45:50.858+0530","caller":"MessageService/main.go:80","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-16T11:45:57.541+0530","caller":"MessageService/main.go:191","message":"dial tcp [::1]:19092: connectex: No connection could be made because the target machine actively refused it."}
+{"level":"ERROR","time":"2020-05-16T12:16:08.267+0530","caller":"MessageService/main.go:80","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-16T12:16:14.943+0530","caller":"MessageService/main.go:192","message":"dial tcp [::1]:19092: connectex: No connection could be made because the target machine actively refused it."}
