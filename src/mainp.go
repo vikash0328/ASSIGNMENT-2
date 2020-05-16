@@ -51,8 +51,8 @@ func initZapLog() *zap.Logger {
 	cfg := zap.Config{
 		Encoding:         "json",
 		Level:            zap.NewAtomicLevelAt(zapcore.DebugLevel),
-		OutputPaths:      []string{"stderr"},
-		ErrorOutputPaths: []string{"stderr"},
+		OutputPaths:      []string{"prod.log"},
+		ErrorOutputPaths: []string{"prod.log"},
 		EncoderConfig: zapcore.EncoderConfig{
 			MessageKey: viper.GetString("MessageKey"),
 

@@ -1,0 +1,2 @@
+{"level":"ERROR","time":"2020-05-16T11:17:40.821+0530","caller":"dest/mainc.go:80","message":"the Database field must be set on Operation"}
+{"level":"ERROR","time":"2020-05-16T11:17:47.552+0530","caller":"dest/mainc.go:196","message":"dial tcp [::1]:19092: connectex: No connection could be made because the target machine actively refused it."}
