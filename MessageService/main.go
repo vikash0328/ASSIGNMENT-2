@@ -22,8 +22,8 @@ var state_email int
 
 type Body struct {
 	ID            primitive.ObjectID `bson:"_id,omitempty" json:"_id ,omitempty"`
-	Email         string             `bson:"Email ,omitempty" json:"Email ,omitempty"`
-	Phone         string             `bson:"Phone ,omitempty" json:"Phone ,omitempty"`
+	Email         string             `bson:"Email,omitempty" json:"Email,omitempty"`
+	Phone         string             `bson:"Phone,omitempty" json:"Phone,omitempty"`
 	MessageBody   string             `bson:"MessageBody, omitempty" json:"MessageBody, omitempty"`
 	Transactionid string             `bson:"Transactionid, omitempty" json:"Transactionid, omitempty"`
 	Customerid    string             `bson:"Customerid, omitempty" json:"Customerid, omitempty"`
@@ -143,8 +143,8 @@ func send(m []byte) bool {
 	var body Body
 	json.Unmarshal(m, &body)
 
-	from := "swapnilbarai149@gmail.com"
-	pass := "......."
+	from := "swapnil.bro123@gmail.com"
+	pass := "Let@123#rt"
 	to := body.Phone + "@sms.clicksend.com" // receivers mobile number +N number  format
 	msg := "Your Trnsaction is Completed:" + "\n" + "Transaction_id: " + string(body.Transactionid) + "\n" + "Customer_id: " + string(body.Customerid) + "\n"
 
@@ -166,6 +166,7 @@ func send(m []byte) bool {
 func main() {
 
 	ftmh := 0
+	state_email = 0
 	viper.SetConfigName("config")
 
 	viper.AddConfigPath(".")
@@ -177,13 +178,13 @@ func main() {
 	if err := viper.ReadInConfig(); err != nil {
 		logger.Error(err.Error())
 	}
-
-	r := kakfareader()
 	logger = initZapLog()
 
+	r := kakfareader()
+	r.SetOffset(102)
 	u := true
 	for {
-		if u && (state_email == 0 || state_email == 1 || ftmh == 0) {
+		if u && (state_email == 1 || ftmh == 0) {
 			handleFailure()
 		}
 		m, err := r.ReadMessage(context.Background())
@@ -196,8 +197,6 @@ func main() {
 		json.Unmarshal(m.Value, &body)
 		logger.Info("metadata", zap.String("Topic", m.Topic), zap.String("Key", string(m.Key)), zap.Int64("Offset", m.Offset))
 		logger.Info(string(m.Value))
-		send(m.Value)
-
 		u = send(m.Value)
 		ftmh = 1
 	}

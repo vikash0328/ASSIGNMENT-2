@@ -22,7 +22,7 @@ type Body struct {
 	Phone         string `json:"Phone"`
 	MessageBody   string `json:"MessageBody"`
 	Transactionid string `json:"Transactionid"`
-	Customerid    string `json:"Custemerid"`
+	Customerid    string `json:"Customerid"`
 	Key           string `json:"Key"`
 }
 

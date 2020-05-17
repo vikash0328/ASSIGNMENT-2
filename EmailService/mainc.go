@@ -8,7 +8,6 @@ import (
 	"time"
 
 	"github.com/segmentio/kafka-go"
-	"github.com/spf13/viper"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -54,7 +53,7 @@ func handleInsert(data []byte) {
 	if client == nil {
 		return
 	}
-	collection := client.Database(viper.GetString("database")).Collection(viper.GetString("collection"))
+	collection := client.Database("email").Collection("swap")
 
 	ctx, _ := context.WithTimeout(context.Background(), 2*time.Second)
 	result, er := collection.InsertOne(ctx, b)
@@ -66,13 +65,12 @@ func handleInsert(data []byte) {
 	}
 
 }
-
 func handleFailure() {
 	client := connect()
 	if client == nil {
 		return
 	}
-	collection := client.Database(viper.GetString("database")).Collection(viper.GetString("collection"))
+	collection := client.Database("email").Collection("swap")
 
 	ctx, _ := context.WithTimeout(context.Background(), 2*time.Second)
 	cursor, er := collection.Find(ctx, bson.M{})
@@ -106,10 +104,9 @@ func handleFailure() {
 }
 
 func kakfareader() *kafka.Reader {
-
 	r := kafka.NewReader(kafka.ReaderConfig{
-		Brokers:  []string{viper.GetString("Brokers")},
-		Topic:    viper.GetString("Topic"),
+		Brokers:  []string{"localhost:9092"},
+		Topic:    "email",
 		MinBytes: 10e3, // 10KB
 		MaxBytes: 10e6, // 10MB
 	})
@@ -120,18 +117,18 @@ func initZapLog() *zap.Logger {
 	cfg := zap.Config{
 		Encoding:         "json",
 		Level:            zap.NewAtomicLevelAt(zapcore.DebugLevel),
-		OutputPaths:      []string{"email.log"},
-		ErrorOutputPaths: []string{"email.log"},
+		OutputPaths:      []string{"stderr"},
+		ErrorOutputPaths: []string{"stderr"},
 		EncoderConfig: zapcore.EncoderConfig{
-			MessageKey: viper.GetString("MessageKey"),
+			MessageKey: "message",
 
-			LevelKey:    viper.GetString("LevelKey"),
+			LevelKey:    "level",
 			EncodeLevel: zapcore.CapitalLevelEncoder,
 
-			TimeKey:    viper.GetString("TimeKey"),
+			TimeKey:    "time",
 			EncodeTime: zapcore.ISO8601TimeEncoder,
 
-			CallerKey:    viper.GetString("CallerKey"),
+			CallerKey:    "caller",
 			EncodeCaller: zapcore.ShortCallerEncoder,
 		},
 	}
@@ -143,8 +140,8 @@ func send(m []byte) bool {
 	var body Body
 	json.Unmarshal(m, &body)
 
-	from := "swapnilbarai149@gmail.com"
-	pass := "......."
+	from := "swapnil.bro123@gmail.com"
+	pass := "Let@123#rt"
 	to := body.Email
 
 	msg := "Your Trnsaction is Completed: " + from + "\n" +
@@ -169,22 +166,11 @@ func send(m []byte) bool {
 }
 
 func main() {
-
-	viper.SetConfigName("config")
-
-	viper.AddConfigPath(".")
-
-	viper.AutomaticEnv()
-
-	viper.SetConfigType("yml")
-
-	if err := viper.ReadInConfig(); err != nil {
-		logger.Error(err.Error())
-	}
-
+	state_email = 0
 	r := kakfareader()
 	logger = initZapLog()
 
+	r.SetOffset(78)
 	u := true
 	for {
 		if u && (state_email == 0 || state_email == 1) {
@@ -200,7 +186,6 @@ func main() {
 		json.Unmarshal(m.Value, &body)
 		logger.Info("metadata", zap.String("Topic", m.Topic), zap.String("Key", string(m.Key)), zap.Int64("Offset", m.Offset))
 		logger.Info(string(m.Value))
-		send(m.Value)
 
 		u = send(m.Value)
 
