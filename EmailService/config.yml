@@ -1,9 +1,13 @@
 server:
   port: ":8080"
 
-Brokers: "localhost:19092" 
+Brokers: "localhost:9092" 
 Topic: "email"
 MessageKey: "message"
 LevelKey: "level"
 TimeKey: "time"
 CallerKey: "caller"
+database: "email"
+collection: "swap"
+GroupName: "Email-Group"
+collection1: "starting"

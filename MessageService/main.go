@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/smtp"
+
+	"sync"
 	"time"
 
 	"github.com/segmentio/kafka-go"
@@ -18,15 +20,15 @@ import (
 )
 
 var logger *zap.Logger
-var state_email int
+var state_email [3]int
 
 type Body struct {
 	ID            primitive.ObjectID `bson:"_id,omitempty" json:"_id ,omitempty"`
 	Email         string             `bson:"Email,omitempty" json:"Email,omitempty"`
 	Phone         string             `bson:"Phone,omitempty" json:"Phone,omitempty"`
-	MessageBody   string             `bson:"MessageBody, omitempty" json:"MessageBody, omitempty"`
-	Transactionid string             `bson:"Transactionid, omitempty" json:"Transactionid, omitempty"`
-	Customerid    string             `bson:"Customerid, omitempty" json:"Customerid, omitempty"`
+	MessageBody   string             `bson:"MessageBody,omitempty" json:"MessageBody,omitempty"`
+	Transactionid string             `bson:"Transactionid,omitempty" json:"Transactionid,omitempty"`
+	Customerid    string             `bson:"Customerid,omitempty" json:"Customerid,omitempty"`
 	Key           string             `bson:"Key" json:"Key"`
 }
 
@@ -67,10 +69,10 @@ func handleInsert(data []byte) {
 
 }
 
-func handleFailure() {
+func handleFailure(j int) bool {
 	client := connect()
 	if client == nil {
-		return
+		return false
 	}
 	collection := client.Database(viper.GetString("database")).Collection(viper.GetString("collection"))
 
@@ -78,7 +80,7 @@ func handleFailure() {
 	cursor, er := collection.Find(ctx, bson.M{})
 	if er != nil {
 		logger.Error(er.Error())
-		return
+		return false
 	}
 	defer cursor.Close(ctx)
 
@@ -86,32 +88,34 @@ func handleFailure() {
 		var b Body
 		cursor.Decode(&b)
 		d, _ := json.Marshal(b)
-		if send([]byte(d)) {
+		if send([]byte(d), j) {
 			ctm, _ := context.WithTimeout(context.Background(), 2*time.Second)
 			res, erd := collection.DeleteOne(ctm, bson.M{"_id": b.ID})
 			if erd != nil {
 				logger.Error(erd.Error())
-				return
+				return false
 			}
 			logger.Info("Succesfully Delete")
 			logger.Info("Successfully Send", zap.String("Transaction_id", b.Transactionid))
 			fmt.Println(res)
 		} else {
 			logger.Info("Email Sevice is down")
-			return
+			return false
 		}
 
 	}
-	state_email = -1
+	return true
 }
 
 func kakfareader() *kafka.Reader {
 
 	r := kafka.NewReader(kafka.ReaderConfig{
-		Brokers:  []string{viper.GetString("Brokers")},
-		Topic:    viper.GetString("Topic"),
-		MinBytes: 10e3, // 10KB
-		MaxBytes: 10e6, // 10MB
+		Brokers:        []string{viper.GetString("Brokers")},
+		GroupID:        viper.GetString("GroupName"),
+		Topic:          viper.GetString("Topic"),
+		CommitInterval: 5 * time.Second,
+		MinBytes:       10e3, // 10KB
+		MaxBytes:       10e6, // 10MB
 	})
 	return r
 }
@@ -139,7 +143,7 @@ func initZapLog() *zap.Logger {
 	return logger
 }
 
-func send(m []byte) bool {
+func send(m []byte, j int) bool {
 	var body Body
 	json.Unmarshal(m, &body)
 
@@ -155,7 +159,7 @@ func send(m []byte) bool {
 	if err != nil {
 		logger.Error(err.Error())
 		handleInsert(m)
-		state_email = 1
+		state_email[j] = 1
 		return false
 	}
 	logger.Info("Successfully Send", zap.String("Transaction_id", body.Transactionid))
@@ -164,9 +168,8 @@ func send(m []byte) bool {
 }
 
 func main() {
+	var wg sync.WaitGroup
 
-	ftmh := 0
-	state_email = 0
 	viper.SetConfigName("config")
 
 	viper.AddConfigPath(".")
@@ -176,31 +179,45 @@ func main() {
 	viper.SetConfigType("yml")
 
 	if err := viper.ReadInConfig(); err != nil {
-		logger.Error(err.Error())
+		fmt.Println(err.Error())
+		//logger.Error(err.Error())
 	}
 	logger = initZapLog()
+	handleFailure(0)
+	state_email[0] = 0
+	state_email[1] = 0
+	state_email[2] = 0
 
-	r := kakfareader()
-	r.SetOffset(102)
-	u := true
-	for {
-		if u && (state_email == 1 || ftmh == 0) {
-			handleFailure()
-		}
-		m, err := r.ReadMessage(context.Background())
+	wg.Add(3)
+	for i := 0; i < 3; i++ {
 
-		if err != nil {
-			logger.Error(err.Error())
-			break
-		}
-		var body Body
-		json.Unmarshal(m.Value, &body)
-		logger.Info("metadata", zap.String("Topic", m.Topic), zap.String("Key", string(m.Key)), zap.Int64("Offset", m.Offset))
-		logger.Info(string(m.Value))
-		u = send(m.Value)
-		ftmh = 1
+		go func(j int) {
+			r := kakfareader()
+			u := true
+			for {
+				if u && (state_email[j] == 1) {
+					handleFailure(j)
+				}
+				m, err := r.ReadMessage(context.Background())
+
+				if err != nil {
+					logger.Error(err.Error())
+					break
+				}
+				var body Body
+				json.Unmarshal(m.Value, &body)
+				fmt.Println(m.Partition)
+				logger.Info("metadata", zap.String("Topic", m.Topic), zap.String("Key", string(m.Key)), zap.Int64("Offset", m.Offset))
+				logger.Info(string(m.Value))
+				u = send(m.Value, j)
+
+			}
+			r.Close()
+			wg.Done()
+		}(i)
 	}
 	logger.Sync()
-	r.Close()
+
+	wg.Wait()
 
 }

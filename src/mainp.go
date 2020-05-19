@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"time"
 
 	"github.com/gin-gonic/gin"
 
@@ -24,6 +25,27 @@ type Body struct {
 	Transactionid string `json:"Transactionid"`
 	Customerid    string `json:"Customerid"`
 	Key           string `json:"Key"`
+	partition     int    `json:"partition"`
+}
+
+func writeMessagewithPartition(partition int, key []byte, value []byte) int {
+	conn, err := kafka.DialLeader(context.Background(), "tcp", viper.GetString("Brokers"), viper.GetString("Topic"), partition)
+	if err == nil {
+		conn.SetWriteDeadline(time.Now().Add(10 * time.Second))
+		_, errt := conn.WriteMessages(
+			kafka.Message{Key: key,
+				Value: value},
+		)
+		if errt != nil {
+			logger.Error(errt.Error())
+			return 0
+		}
+		logger.Info("Message send to Partition", zap.Int("Partition", partition))
+		conn.Close()
+		return 1
+	}
+	return 0
+
 }
 
 func getkafkawriter() *kafka.Writer {
@@ -102,12 +124,23 @@ func handlepost(c *gin.Context) {
 
 	b, _ := json.Marshal(jbody)
 	var s int
-	if jbody.Key != "" {
-		s = writemessagewithkey(w, []byte(jbody.Key), []byte(string(b)))
+	if jbody.partition == -1 {
+		if jbody.Key != "" {
+			s = writemessagewithkey(w, []byte(jbody.Key), []byte(string(b)))
 
+		} else {
+			s = writemessagewithkey(w, nil, []byte(string(b)))
+
+		}
 	} else {
-		s = writemessagewithkey(w, nil, []byte(string(b)))
 
+		if jbody.Key != "" {
+			s = writeMessagewithPartition(jbody.partition, []byte(jbody.Key), []byte(string(b)))
+
+		} else {
+			s = writeMessagewithPartition(jbody.partition, nil, []byte(string(b)))
+
+		}
 	}
 	if s == 0 {
 		c.JSON(200, gin.H{"message": "Error", "Body": "Couldn't complete your request"})
