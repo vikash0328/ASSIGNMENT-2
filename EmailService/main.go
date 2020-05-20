@@ -8,6 +8,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/natefinch/lumberjack"
 	"github.com/segmentio/kafka-go"
 	"github.com/spf13/viper"
 	"go.mongodb.org/mongo-driver/bson"
@@ -33,8 +34,38 @@ type Body struct {
 
 type ConsumerFailure struct {
 	ID        primitive.ObjectID `bson:"_id,omitempty"`
-	partition int                `bson:"partition",omitempty`
-	offset    int64              `bson:"offset",omitempty`
+	Partition int                `bson:"partition,omitempty"`
+	Offset    int64              `bson:"offset,omitempty"`
+}
+
+func initZapLog() *zap.Logger {
+	w := zapcore.AddSync(&lumberjack.Logger{
+		Filename:   "email.log",
+		MaxSize:    1, // megabytes
+		MaxBackups: 30,
+		MaxAge:     30, // days
+	})
+
+	config := zapcore.EncoderConfig{
+		MessageKey: viper.GetString("MessageKey"),
+
+		LevelKey:    viper.GetString("LevelKey"),
+		EncodeLevel: zapcore.CapitalLevelEncoder,
+
+		TimeKey:    viper.GetString("TimeKey"),
+		EncodeTime: zapcore.ISO8601TimeEncoder,
+
+		CallerKey:    viper.GetString("CallerKey"),
+		EncodeCaller: zapcore.ShortCallerEncoder,
+	}
+	core := zapcore.NewCore(
+		zapcore.NewJSONEncoder(config),
+		zapcore.NewMultiWriteSyncer(w),
+		zap.InfoLevel,
+	)
+	logger := zap.New(core, zap.AddCaller(), zap.Development())
+	logger.Sugar()
+	return logger
 }
 
 func connect() *mongo.Client {
@@ -105,7 +136,8 @@ func check(partition int, offset int64) int {
 	ctx, _ := context.WithTimeout(context.Background(), 2*time.Second)
 	filter := bson.M{"partition": partition}
 	err := collection.FindOne(ctx, filter).Decode(&b)
-	if err == nil && offset > b.offset {
+
+	if err == nil && offset > b.Offset {
 		update := bson.M{"$set": bson.M{"offset": offset, "partition": partition}}
 
 		ctm, _ := context.WithTimeout(context.Background(), 2*time.Second)
@@ -118,6 +150,7 @@ func check(partition int, offset int64) int {
 		logger.Info("Upadated the count of Offset")
 		return 3
 	} else if err != nil {
+
 		if partitionInsertIntial(partition, offset) == true {
 			return 2
 		} else {
@@ -199,28 +232,7 @@ func kakfareader() *kafka.Reader {
 	return r
 }
 
-func initZapLog() *zap.Logger {
-	cfg := zap.Config{
-		Encoding:         "json",
-		Level:            zap.NewAtomicLevelAt(zapcore.DebugLevel),
-		OutputPaths:      []string{"email.log"},
-		ErrorOutputPaths: []string{"email.log"},
-		EncoderConfig: zapcore.EncoderConfig{
-			MessageKey: viper.GetString("MessageKey"),
 
-			LevelKey:    viper.GetString("LevelKey"),
-			EncodeLevel: zapcore.CapitalLevelEncoder,
-
-			TimeKey:    viper.GetString("TimeKey"),
-			EncodeTime: zapcore.ISO8601TimeEncoder,
-
-			CallerKey:    viper.GetString("CallerKey"),
-			EncodeCaller: zapcore.ShortCallerEncoder,
-		},
-	}
-	logger, _ = cfg.Build()
-	return logger
-}
 
 func send(m []byte) bool {
 	var body Body
@@ -274,6 +286,7 @@ func main() {
 	for {
 		if u && (state_email == 1 || fsm == 1) {
 			handleFailure()
+
 		}
 		m, err := r.FetchMessage(context.Background())
 
@@ -281,7 +294,6 @@ func main() {
 			logger.Error(err.Error())
 			break
 		}
-		fmt.Println(fsm)
 
 		if fsm == 1 || PrevPartition != m.Partition {
 			PrevPartition = m.Partition
