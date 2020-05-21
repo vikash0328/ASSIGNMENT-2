@@ -34,6 +34,22 @@ type Body struct {
 	Key           string             `bson:"Key" json:"Key"`
 }
 
+func InitVip() bool {
+	viper.SetConfigName("config")
+
+	viper.AddConfigPath(".")
+
+	viper.AutomaticEnv()
+
+	viper.SetConfigType("yml")
+
+	if err := viper.ReadInConfig(); err != nil {
+		logger.Error(err.Error())
+		return false
+	}
+	return true
+}
+
 func initZapLog() *zap.Logger {
 	w := zapcore.AddSync(&lumberjack.Logger{
 		Filename:   "mess.log",
@@ -206,30 +222,51 @@ func send(m []byte, j int) bool {
 	return true
 }
 
+func startingFailure(j int, wg *sync.WaitGroup) {
+	handleFailure(j)
+
+	wg.Done()
+}
+
+func HandleMessagesParallel(j int, wg *sync.WaitGroup) {
+
+	r := kakfareader()
+	u := true
+	for {
+		if u && (state_email[j] == 1) {
+			handleFailure(j)
+		}
+		m, err := r.ReadMessage(context.Background())
+		if err != nil {
+			logger.Error(err.Error())
+			break
+		}
+		var body Body
+		json.Unmarshal(m.Value, &body)
+		fmt.Println(m.Partition)
+		logger.Info("metadata", zap.String("Topic", m.Topic), zap.String("Key", string(m.Key)), zap.Int64("Offset", m.Offset))
+		logger.Info(string(m.Value))
+		u = send(m.Value, j)
+
+	}
+	r.Close()
+	wg.Done()
+
+}
+
 func main() {
 	var wg sync.WaitGroup
 
-	viper.SetConfigName("config")
-
-	viper.AddConfigPath(".")
-
-	viper.AutomaticEnv()
-
-	viper.SetConfigType("yml")
-
-	if err := viper.ReadInConfig(); err != nil {
-		fmt.Println(err.Error())
-		//logger.Error(err.Error())
+	if !InitVip() {
+		fmt.Println("Unable to open Viper file")
+		return
 	}
 	logger = initZapLog()
 	wg.Add(3)
 	for k := 0; k < 3; k++ {
 
-		go func(j int) {
-			handleFailure(j)
+		go startingFailure(k, &wg)
 
-			wg.Done()
-		}(k)
 	}
 	wg.Wait()
 
@@ -240,29 +277,8 @@ func main() {
 	wg.Add(3)
 	for i := 0; i < 3; i++ {
 
-		go func(j int) {
-			r := kakfareader()
-			u := true
-			for {
-				if u && (state_email[j] == 1) {
-					handleFailure(j)
-				}
-				m, err := r.ReadMessage(context.Background())
-				if err != nil {
-					logger.Error(err.Error())
-					break
-				}
-				var body Body
-				json.Unmarshal(m.Value, &body)
-				fmt.Println(m.Partition)
-				logger.Info("metadata", zap.String("Topic", m.Topic), zap.String("Key", string(m.Key)), zap.Int64("Offset", m.Offset))
-				logger.Info(string(m.Value))
-				u = send(m.Value, j)
+		go HandleMessagesParallel(i, &wg)
 
-			}
-			r.Close()
-			wg.Done()
-		}(i)
 	}
 	logger.Sync()
 
