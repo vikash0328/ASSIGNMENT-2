@@ -1,13 +1,4 @@
-FROM golang:alpine AS build-env
-ADD . /src
-RUN cd /src && go build -o goapp
-
-# final stage
-FROM alpine
-WORKDIR C:/Users/hp/Documents/GitHub/ASSIGNMENT-2
-COPY --from=build-env /src/goapp /app/
-CMD ./goappFROM golang:1.14.1 AS build-env
-
+FROM golang:1.14.1 AS build-env
 # Copy the source from the current directory to the Working Directory inside the container
 COPY . .
 # build binary
@@ -21,7 +12,7 @@ RUN go build -o ./build/goproducer ./producer
 # final stage
 FROM alpine
 # Set the Current Working Directory inside the container
-WORKDIR /app
+WORKDIR C:/Users/hp/Documents/GitHub/ASSIGNMENT-2
 COPY --from=build-env ./build/* /app/
 EXPOSE 8080
 CMD ./goapp
