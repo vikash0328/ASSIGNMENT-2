@@ -2,30 +2,39 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"net/http/httptest"
+	"strconv"
 	"strings"
+	"swap/src/handler"
 	"testing"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/assert/v2"
-	"github.com/spf13/viper"
 )
 
-func postResponse(post Body, t *testing.T) string {
-
-	logger = initZapLog()
+func postResponse(post handler.Body, t *testing.T) string {
 
 	b, _ := json.Marshal(post)
 
 	r := gin.Default()
+	var request *http.Request
+	if post.Partition == -1 {
+		r.POST("/home", handler.HandlepostPartition)
+		req, _ := http.NewRequest("POST", "/home", strings.NewReader(string(b)))
+		request = req
+	} else {
 
-	r.POST("/", Handlepost)
-	req, _ := http.NewRequest("POST", "/", strings.NewReader(string(b)))
+		path := "/home/Partition:"
+		partition := strconv.Itoa(post.Partition)
+		path = path + partition + "/"
+		r.POST(path, handler.Handlepost)
+		req, _ := http.NewRequest("POST", "/home", strings.NewReader(string(b)))
+		request = req
+	}
 
 	w := httptest.NewRecorder()
-	r.ServeHTTP(w, req)
+	r.ServeHTTP(w, request)
 
 	assert.Equal(t, 200, w.Code)
 	y := w.Body.String()
@@ -34,18 +43,15 @@ func postResponse(post Body, t *testing.T) string {
 
 func TestApiResponse(t *testing.T) {
 
-	viper.SetConfigName("config")
-
-	viper.AddConfigPath(".")
-
-	viper.AutomaticEnv()
-
-	viper.SetConfigType("yml")
-
-	if err := viper.ReadInConfig(); err != nil {
-		fmt.Println(err.Error())
+	if !handler.InitViper() {
+		t.Error("Unable to open Viper file")
 	}
+	//w := Getkafkawriter()
+	//	defer w.Close()
 
+	logger = handler.InitZapLog()
+	defer logger.Sync()
+	handler.PassRefLog(&(*logger))
 	var body [4]string
 
 	body[0] = string([]byte(`{"Body":"your Transaction is Completed","Info":"Message sent with Key","message":"Success"}`))
@@ -63,9 +69,9 @@ func TestApiResponse(t *testing.T) {
 	body[3] = string([]byte(`{"Body":"Couldn't complete your request","message":"Error"}`))
 	//use body when your broker is not working
 
-	post := Body{
+	post := handler.Body{
 		Email:         "sunilsn@iitk.ac.in",
-		Phone:         "9916194654",
+		Phone:         "7432094921",
 		MessageBody:   "hellohiytttty",
 		Transactionid: "125456456",
 		Customerid:    "347656r76789",

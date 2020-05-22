@@ -111,3 +111,11 @@
 {"level":"ERROR","time":"2020-05-20T20:14:36.436+0530","caller":"EmailService/main.go:256","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
 {"level":"ERROR","time":"2020-05-20T20:14:37.047+0530","caller":"EmailService/main.go:176","message":"multiple write errors: [{write errors: [{E11000 duplicate key error collection: email.swap index: _id_ dup key: { _id: ObjectId('5ec5363c59f5b028dffd4338') }}]}, {<nil>}]"}
 {"level":"INFO","time":"2020-05-20T20:14:37.048+0530","caller":"EmailService/main.go:214","message":"Email Sevice is down"}
+{"level":"INFO","time":"2020-05-21T14:31:38.895+0530","caller":"EmailService/main.go:150","message":"Upadated the count of Offset"}
+{"level":"INFO","time":"2020-05-21T14:31:42.550+0530","caller":"EmailService/main.go:150","message":"Upadated the count of Offset"}
+{"level":"INFO","time":"2020-05-21T14:34:52.980+0530","caller":"EmailService/main.go:150","message":"Upadated the count of Offset"}
+{"level":"INFO","time":"2020-05-21T14:34:56.631+0530","caller":"EmailService/main.go:150","message":"Upadated the count of Offset"}
+{"level":"INFO","time":"2020-05-21T14:35:29.484+0530","caller":"EmailService/main.go:150","message":"Upadated the count of Offset"}
+{"level":"INFO","time":"2020-05-21T14:35:33.141+0530","caller":"EmailService/main.go:150","message":"Upadated the count of Offset"}
+{"level":"INFO","time":"2020-05-21T14:38:38.479+0530","caller":"EmailService/main.go:166","message":"Upadated the count of Offset"}
+{"level":"INFO","time":"2020-05-21T14:38:42.135+0530","caller":"EmailService/main.go:166","message":"Upadated the count of Offset"}

@@ -38,6 +38,22 @@ type ConsumerFailure struct {
 	Offset    int64              `bson:"offset,omitempty"`
 }
 
+func InitVip() bool {
+	viper.SetConfigName("config")
+
+	viper.AddConfigPath(".")
+
+	viper.AutomaticEnv()
+
+	viper.SetConfigType("yml")
+
+	if err := viper.ReadInConfig(); err != nil {
+		logger.Error(err.Error())
+		return false
+	}
+	return true
+}
+
 func initZapLog() *zap.Logger {
 	w := zapcore.AddSync(&lumberjack.Logger{
 		Filename:   "email.log",
@@ -232,8 +248,6 @@ func kakfareader() *kafka.Reader {
 	return r
 }
 
-
-
 func send(m []byte) bool {
 	var body Body
 	json.Unmarshal(m, &body)
@@ -267,21 +281,15 @@ func main() {
 	var wg sync.WaitGroup
 	state_email = 0
 	var fsm int64 = 1
-	viper.SetConfigName("config")
-
-	viper.AddConfigPath(".")
-
-	viper.AutomaticEnv()
-
-	viper.SetConfigType("yml")
-
-	if err := viper.ReadInConfig(); err != nil {
-		logger.Error(err.Error())
+	if !InitVip() {
+		fmt.Println("Unable to open Viper file")
+		return
 	}
 
 	logger = initZapLog()
 	r := kakfareader()
 	PrevPartition := -1
+	var PrevOffset int64
 	u := true
 	for {
 		if u && (state_email == 1 || fsm == 1) {
@@ -295,9 +303,9 @@ func main() {
 			break
 		}
 
-		if fsm == 1 || PrevPartition != m.Partition {
+		if fsm == 1 || PrevPartition != m.Partition || PrevOffset >= m.Offset {
 			PrevPartition = m.Partition
-
+			PrevOffset = m.Offset
 			t := check(m.Partition, m.Offset)
 			if t == 1 {
 				logger.Info("SuccesFully Stop From Duplicating Message")
