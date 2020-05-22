@@ -1,6 +1,7 @@
 package main
 
 import (
+	"swap/EmailService/emailhandler"
 	"testing"
 
 	"github.com/go-playground/assert/v2"
@@ -13,10 +14,12 @@ type PartitionOffset struct {
 
 func TestOffsetManagment(t *testing.T) {
 
-	if !InitVip() {
+	if !emailhandler.InitVip() {
 		t.Error("Unable to open Viper file")
 	}
-	logger = initZapLog()
+	logger = emailhandler.InitZapLog()
+	defer logger.Sync()
+	emailhandler.PassRefLog(&(*logger))
 
 	//TEST CASES
 	/*********************************************************************************
@@ -55,16 +58,16 @@ func TestOffsetManagment(t *testing.T) {
 	expectedoutput3 := []int{3, 1, 1}
 
 	for i := 0; i < 3; i++ {
-		s := check(case1[i].Partition, case1[i].Offset)
+		s := emailhandler.Check(case1[i].Partition, case1[i].Offset)
 		assert.Equal(t, expectedouput1[i], s)
 	}
 	for i := 0; i < 3; i++ {
-		s := check(case2[i].Partition, case2[i].Offset)
+		s := emailhandler.Check(case2[i].Partition, case2[i].Offset)
 		assert.Equal(t, expectedouput2[i], s)
 	}
 	for i := 0; i < 3; i++ {
-		s := check(case3[i].Partition, case3[i].Offset)
+		s := emailhandler.Check(case3[i].Partition, case3[i].Offset)
 		assert.Equal(t, expectedoutput3[i], s)
 	}
-	logger.Sync()
+
 }

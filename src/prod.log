@@ -25,3 +25,14 @@
 {"level":"ERROR","time":"2020-05-22T02:05:45.952+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
 {"level":"ERROR","time":"2020-05-22T02:07:24.431+0530","caller":"handler/posthandler.go:28","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
 {"level":"ERROR","time":"2020-05-22T02:20:46.873+0530","caller":"handler/posthandler.go:28","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
+{"level":"ERROR","time":"2020-05-22T11:13:26.461+0530","caller":"handler/posthandler.go:28","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
+{"level":"ERROR","time":"2020-05-22T11:14:02.151+0530","caller":"handler/posthandler.go:28","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
+{"level":"ERROR","time":"2020-05-22T11:14:35.073+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
+{"level":"INFO","time":"2020-05-22T11:16:19.469+0530","caller":"handler/handlerwithoutpartition.go:44","message":"Meassage send succesfully without key"}
+{"level":"INFO","time":"2020-05-22T11:17:57.235+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-22T13:10:23.686+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-22T14:27:15.671+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-22T14:27:40.264+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-22T14:30:50.836+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-22T14:31:25.216+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-22T15:21:00.488+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}

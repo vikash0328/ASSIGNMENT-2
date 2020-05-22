@@ -10,7 +10,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/natefinch/lumberjack"
+	"swap/MessageService/messagehandler"
+
 	"github.com/segmentio/kafka-go"
 	"github.com/spf13/viper"
 	"go.mongodb.org/mongo-driver/bson"
@@ -18,7 +19,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.uber.org/zap"
-	"go.uber.org/zap/zapcore"
 )
 
 var logger *zap.Logger
@@ -32,52 +32,6 @@ type Body struct {
 	Transactionid string             `bson:"Transactionid,omitempty" json:"Transactionid,omitempty"`
 	Customerid    string             `bson:"Customerid,omitempty" json:"Customerid,omitempty"`
 	Key           string             `bson:"Key" json:"Key"`
-}
-
-func InitVip() bool {
-	viper.SetConfigName("config")
-
-	viper.AddConfigPath(".")
-
-	viper.AutomaticEnv()
-
-	viper.SetConfigType("yml")
-
-	if err := viper.ReadInConfig(); err != nil {
-		logger.Error(err.Error())
-		return false
-	}
-	return true
-}
-
-func initZapLog() *zap.Logger {
-	w := zapcore.AddSync(&lumberjack.Logger{
-		Filename:   "mess.log",
-		MaxSize:    1, // megabytes
-		MaxBackups: 30,
-		MaxAge:     30, // days
-	})
-
-	config := zapcore.EncoderConfig{
-		MessageKey: viper.GetString("MessageKey"),
-
-		LevelKey:    viper.GetString("LevelKey"),
-		EncodeLevel: zapcore.CapitalLevelEncoder,
-
-		TimeKey:    viper.GetString("TimeKey"),
-		EncodeTime: zapcore.ISO8601TimeEncoder,
-
-		CallerKey:    viper.GetString("CallerKey"),
-		EncodeCaller: zapcore.ShortCallerEncoder,
-	}
-	core := zapcore.NewCore(
-		zapcore.NewJSONEncoder(config),
-		zapcore.NewMultiWriteSyncer(w),
-		zap.InfoLevel,
-	)
-	logger := zap.New(core, zap.AddCaller(), zap.Development())
-	logger.Sugar()
-	return logger
 }
 
 func connect() *mongo.Client {
@@ -172,32 +126,6 @@ func kakfareader() *kafka.Reader {
 	return r
 }
 
-/*
-
-func initZapLog() *zap.Logger {
-	cfg := zap.Config{
-		Encoding:         "json",
-		Level:            zap.NewAtomicLevelAt(zapcore.DebugLevel),
-		OutputPaths:      []string{"mess.log"},
-		ErrorOutputPaths: []string{"mess.log"},
-		EncoderConfig: zapcore.EncoderConfig{
-			MessageKey: viper.GetString("MessageKey"),
-
-			LevelKey:    viper.GetString("LevelKey"),
-			EncodeLevel: zapcore.CapitalLevelEncoder,
-
-			TimeKey:    viper.GetString("TimeKey"),
-			EncodeTime: zapcore.ISO8601TimeEncoder,
-
-			CallerKey:    viper.GetString("CallerKey"),
-			EncodeCaller: zapcore.ShortCallerEncoder,
-		},
-	}
-	logger, _ = cfg.Build()
-	return logger
-}
-*/
-
 func send(m []byte, j int) bool {
 	var body Body
 	json.Unmarshal(m, &body)
@@ -257,11 +185,12 @@ func HandleMessagesParallel(j int, wg *sync.WaitGroup) {
 func main() {
 	var wg sync.WaitGroup
 
-	if !InitVip() {
+	if !messagehandler.InitVip() {
 		fmt.Println("Unable to open Viper file")
 		return
 	}
-	logger = initZapLog()
+	logger = messagehandler.InitZapLog()
+	defer logger.Sync()
 	wg.Add(3)
 	for k := 0; k < 3; k++ {
 
@@ -280,7 +209,6 @@ func main() {
 		go HandleMessagesParallel(i, &wg)
 
 	}
-	logger.Sync()
 
 	wg.Wait()
 

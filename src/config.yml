@@ -1,7 +1,7 @@
 server:
   port: ":8080"
 
-Brokers: "192.168.99.100:9092" 
+Brokers: "localhost:9092" 
 Topic: "email"
 MessageKey: "message"
 LevelKey: "level"

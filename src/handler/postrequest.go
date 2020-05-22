@@ -73,6 +73,7 @@ func Handlepost(c *gin.Context) {
 func HandlepostPartition(c *gin.Context) {
 
 	partition, _ := strconv.Atoi(c.Param("Partition"))
+	fmt.Println(partition)
 
 	var jbody Body
 	if err := c.ShouldBindJSON(&jbody); err != nil {
