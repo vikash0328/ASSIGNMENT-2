@@ -23,23 +23,6 @@ type Body struct {
 	Key           string             `bson:"Key" json:"Key"`
 }
 
-/*func connect() *mongo.Client {
-/*credential := options.Credential{
-	Username: "swapnil",
-	Password: "swapnil@123",
-}*/
-//clientOpts := options.Client().ApplyURI("mongodb://localhost:27017").SetAuth(credential)
-/*clientOpts := options.Client().ApplyURI("mongodb://localhost:27017")
-	ctx, _ := context.WithTimeout(context.Background(), 2*time.Second)
-	client, err := mongo.Connect(ctx, clientOpts)
-	if err != nil {
-		fmt.Println(err.Error())
-		return nil
-	}
-	return client
-
-}*/
-
 var State_email int
 
 func HandleInsert(data []byte) {

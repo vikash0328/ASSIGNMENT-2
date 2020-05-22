@@ -36,3 +36,4 @@
 {"level":"INFO","time":"2020-05-22T14:30:50.836+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
 {"level":"INFO","time":"2020-05-22T14:31:25.216+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
 {"level":"INFO","time":"2020-05-22T15:21:00.488+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-22T17:33:18.774+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
