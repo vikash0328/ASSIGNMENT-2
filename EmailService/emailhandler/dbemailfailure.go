@@ -13,6 +13,8 @@ import (
 	"go.uber.org/zap"
 )
 
+// binding for message comes from kafka-consumer group
+
 type Body struct {
 	ID            primitive.ObjectID `bson:"_id,omitempty" json:"_id ,omitempty"`
 	Email         string             `bson:"Email,omitempty" json:"Email,omitempty"`
@@ -24,6 +26,8 @@ type Body struct {
 }
 
 var State_email int
+
+//case when mail server is down so it will insert given message in database
 
 func HandleInsert(data []byte) {
 	var b Body
@@ -53,37 +57,45 @@ func HandleFailure() int {
 	collection := client.Database(viper.GetString("database")).Collection(viper.GetString("collection"))
 
 	ctx, _ := context.WithTimeout(context.Background(), 2*time.Second)
-	cursor, er := collection.Find(ctx, bson.M{})
+	cursor, er := collection.Find(ctx, bson.M{}) //find all messages in database to send
 	if er != nil {
 		logger.Error(er.Error())
 		return 0
 	}
 	defer cursor.Close(ctx)
-
+	//itrating over all messages
 	for cursor.Next(ctx) {
 		var b Body
 		cursor.Decode(&b)
 		d, _ := json.Marshal(b)
+		//send message return true for success
 		if Send([]byte(d)) {
 			ctm, _ := context.WithTimeout(context.Background(), 2*time.Second)
-			res, erd := collection.DeleteOne(ctm, bson.M{"_id": b.ID})
+			res, erd := collection.DeleteOne(ctm, bson.M{"_id": b.ID}) //delete the message which are sucessfully send
+			//error means database is down so return
 			if erd != nil {
 				logger.Error(erd.Error())
+
 				return 0
 			}
 			logger.Info("Succesfully Delete")
 			logger.Info("Successfully Send", zap.String("Transaction_id", b.Transactionid))
 			fmt.Println(res)
 		} else {
+			//error means database is down so return
 			logger.Info("Email Sevice is down")
 			return 0
 		}
 
 	}
-	return -1
+	return -1 //indicating that all messages have deleted from database
 }
+
+// send message to provided email-id
+
 func Send(m []byte) bool {
 	var body Body
+	//binding for converting byte data struct type Body
 	json.Unmarshal(m, &body)
 
 	from := "swapnil.bro123@gmail.com"
@@ -102,8 +114,9 @@ func Send(m []byte) bool {
 
 	if err != nil {
 		logger.Error(err.Error())
+		//case when email server id down so insert data into database
 		HandleInsert(m)
-		State_email = 1
+		State_email = 1 //it indicate that their is message in database to send
 		return false
 	}
 	logger.Info("Successfully Send", zap.String("Transaction_id", body.Transactionid))

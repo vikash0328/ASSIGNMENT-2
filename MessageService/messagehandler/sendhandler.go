@@ -7,8 +7,10 @@ import (
 	"go.uber.org/zap"
 )
 
+// send message to provided email-id
 func send(m []byte, j int) bool {
 	var body Body
+	//binding for converting byte data struct type Body
 	json.Unmarshal(m, &body)
 
 	from := "swapnil.bro123@gmail.com"
@@ -22,8 +24,9 @@ func send(m []byte, j int) bool {
 
 	if err != nil {
 		logger.Error(err.Error())
+		//case when email server id down so insert data into database
 		handleInsert(m, j)
-		StateEmail[j] = 1
+		StateEmail[j] = 1 //it indicate that their is message in  the collection  for jth goroutine database to send
 		return false
 	}
 	logger.Info("Successfully Send", zap.String("Transaction_id", body.Transactionid))

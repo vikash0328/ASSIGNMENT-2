@@ -218,3 +218,20 @@
 {"level":"INFO","time":"2020-05-22T15:21:30.234+0530","caller":"emailhandler/dbemailfailure.go:59","message":"Succesfully Inserted"}
 {"level":"INFO","time":"2020-05-22T15:29:03.362+0530","caller":"emailhandler/dbhandleoffset.go:107","message":"Upadated the count of Offset"}
 {"level":"INFO","time":"2020-05-22T15:29:07.017+0530","caller":"emailhandler/dbhandleoffset.go:107","message":"Upadated the count of Offset"}
+{"level":"ERROR","time":"2020-05-22T23:12:44.026+0530","caller":"emailhandler/dbemailfailure.go:58","message":"connection(localhost:27017[-3]) incomplete read of message header: read tcp 127.0.0.1:63471->127.0.0.1:27017: i/o timeout"}
+{"level":"INFO","time":"2020-05-22T23:12:52.390+0530","caller":"emailhandler/kafkarecieve.go:27","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-22T23:12:57.419+0530","caller":"emailhandler/dbemailfailure.go:109","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-22T23:12:58.453+0530","caller":"emailhandler/dbemailfailure.go:74","message":"Succesfully Delete"}
+{"level":"INFO","time":"2020-05-22T23:12:58.453+0530","caller":"emailhandler/dbemailfailure.go:75","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-22T23:12:59.061+0530","caller":"emailhandler/kafkarecieve.go:27","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-22T23:13:00.277+0530","caller":"emailhandler/kafkarecieve.go:27","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-22T23:13:01.492+0530","caller":"emailhandler/kafkarecieve.go:27","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-22T23:13:02.709+0530","caller":"emailhandler/kafkarecieve.go:27","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-22T23:13:03.921+0530","caller":"emailhandler/kafkarecieve.go:27","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-22T23:13:05.136+0530","caller":"emailhandler/kafkarecieve.go:27","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-22T23:13:06.351+0530","caller":"emailhandler/kafkarecieve.go:27","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-22T23:13:07.565+0530","caller":"emailhandler/kafkarecieve.go:27","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-22T23:13:08.962+0530","caller":"emailhandler/dbhandleoffset.go:109","message":"Upadated the count of Offset"}
+{"level":"INFO","time":"2020-05-22T23:13:08.962+0530","caller":"emailhandler/kafkarecieve.go:50","message":"metadata","Topic":"email","Key":"","Offset":161}
+{"level":"INFO","time":"2020-05-22T23:13:08.962+0530","caller":"emailhandler/kafkarecieve.go:51","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-22T23:13:12.492+0530","caller":"emailhandler/dbemailfailure.go:109","message":"Successfully Send","Transaction_id":"125456456"}

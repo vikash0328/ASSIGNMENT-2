@@ -31,6 +31,7 @@ func connect() *mongo.Client {
 
 }
 
+//case when mail server is down so it will insert given message in database
 func handleInsert(data []byte, j int) {
 	var b Body
 	json.Unmarshal(data, &b)
@@ -62,20 +63,22 @@ func handleFailure(j int) bool {
 	collection := client.Database(viper.GetString("database")).Collection(collectionName[j])
 
 	ctx, _ := context.WithTimeout(context.Background(), 2*time.Second)
-	cursor, er := collection.Find(ctx, bson.M{})
+	cursor, er := collection.Find(ctx, bson.M{}) //find all messages in database for jth gorotine to send
 	if er != nil {
 		logger.Error(er.Error())
 		return false
 	}
 	defer cursor.Close(ctx)
-
+	//itrating over all messages for jth goroutine
 	for cursor.Next(ctx) {
 		var b Body
 		cursor.Decode(&b)
 		d, _ := json.Marshal(b)
+		//send message return true for success for jth goroutine
 		if send([]byte(d), j) {
 			ctm, _ := context.WithTimeout(context.Background(), 2*time.Second)
 			res, erd := collection.DeleteOne(ctm, bson.M{"_id": b.ID})
+			//error means database is down so return
 			if erd != nil {
 				logger.Error(erd.Error())
 				return false
@@ -84,11 +87,12 @@ func handleFailure(j int) bool {
 			logger.Info("Successfully Send", zap.String("Transaction_id", b.Transactionid))
 			fmt.Println(res)
 		} else {
+			//error means database is down so return
 			logger.Info("Email Sevice is down")
 			return false
 		}
 
 	}
-	StateEmail[j] = -1
+	StateEmail[j] = -1 //indicating that all messages have deleted from database-collection jth goroutine
 	return true
 }

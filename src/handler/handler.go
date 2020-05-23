@@ -9,6 +9,12 @@ import (
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
+/*******************************************************************************************
+*  InitZap  Initialises  path to logger,formating of log ,log-rotation policy
+*
+*
+**********************************************************************************************/
+
 func InitZapLog() *zap.Logger {
 	w := zapcore.AddSync(&lumberjack.Logger{
 		Filename:   "prod.log",
@@ -40,9 +46,9 @@ func InitZapLog() *zap.Logger {
 }
 
 /*****************************************************************************************
-
-
-
+*   InitViper sets the file the from which we reading constants in our code
+*
+*
 ********************************************************************************************/
 
 func InitViper() bool {

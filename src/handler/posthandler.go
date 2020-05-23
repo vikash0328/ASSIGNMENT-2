@@ -9,6 +9,16 @@ import (
 	"go.uber.org/zap"
 )
 
+/***************************************************************************************************
+*  this function take partition no. to which the message to send, key in bytes ,messages to send in bytes
+*  logger as pointer for writing log
+*  first its sets configuration using kafka.DialLeader
+*  then its sets deadline for sending message using SetWriteDeadline method
+*  finally ,it  send message with  conn.WriteMessages  method
+*  con..WriteMessages method return no. bytes it sends if sussesfull else return error
+*  return values are helpful post api response
+******************************************************************************************************/
+
 func WriteMessagewithPartition(partition int, key []byte, value []byte, logger *zap.Logger) int {
 	conn, err := kafka.DialLeader(context.Background(), "tcp", viper.GetString("Brokers"), viper.GetString("Topic"), partition)
 	if err == nil {

@@ -9,6 +9,12 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
+/*****************************************************************************************
+*   InitViper sets the file the from which we reading constants in our code
+*
+*
+********************************************************************************************/
+
 func InitVip() bool {
 	viper.SetConfigName("config")
 
@@ -24,6 +30,12 @@ func InitVip() bool {
 	}
 	return true
 }
+
+/*******************************************************************************************
+*  InitZap  Initialises  path to logger,formating of log ,log-rotation policy
+*
+*
+**********************************************************************************************/
 
 func InitZapLog() *zap.Logger {
 	w := zapcore.AddSync(&lumberjack.Logger{
