@@ -32,12 +32,12 @@ func connect() *mongo.Client {
 }
 
 //case when mail server is down so it will insert given message in database
-func handleInsert(data []byte, j int) {
+func handleInsert(data []byte, j int) bool {
 	var b Body
 	json.Unmarshal(data, &b)
 	client := connect()
 	if client == nil {
-		return
+		return false
 	}
 	collectionName := strings.Split(viper.GetString("collection"), ",")
 	collection := client.Database(viper.GetString("database")).Collection(collectionName[j])
@@ -46,11 +46,12 @@ func handleInsert(data []byte, j int) {
 	result, er := collection.InsertOne(ctx, b)
 	if er != nil {
 		logger.Error(er.Error())
+		return false
 	} else {
 		logger.Info("Succesfully Inserted")
 		fmt.Println(result)
 	}
-
+	return true
 }
 
 func handleFailure(j int) bool {

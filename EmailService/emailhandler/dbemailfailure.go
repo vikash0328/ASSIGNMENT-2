@@ -29,12 +29,12 @@ var State_email int
 
 //case when mail server is down so it will insert given message in database
 
-func HandleInsert(data []byte) {
+func HandleInsert(data []byte) bool {
 	var b Body
 	json.Unmarshal(data, &b)
 	client := connect()
 	if client == nil {
-		return
+		return false
 	}
 	collection := client.Database(viper.GetString("database")).Collection(viper.GetString("collection"))
 
@@ -42,11 +42,12 @@ func HandleInsert(data []byte) {
 	result, er := collection.InsertOne(ctx, b)
 	if er != nil {
 		logger.Error(er.Error())
+		return false
 	} else {
 		logger.Info("Succesfully Inserted")
 		fmt.Println(result)
 	}
-
+	return true
 }
 
 func HandleFailure() int {
@@ -115,9 +116,11 @@ func Send(m []byte) bool {
 	if err != nil {
 		logger.Error(err.Error())
 		//case when email server id down so insert data into database
-		HandleInsert(m)
-		State_email = 1 //it indicate that their is message in database to send
-		return false
+		if HandleInsert(m) {
+			State_email = 1 //it indicate that their is message in database to send
+			return false
+		}
+		DBEmailFail = true
 	}
 	logger.Info("Successfully Send", zap.String("Transaction_id", body.Transactionid))
 

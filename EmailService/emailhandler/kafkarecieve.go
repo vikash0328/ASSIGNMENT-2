@@ -12,9 +12,11 @@ import (
 )
 
 var fsm int64
-var PrevOffset int64
-var PrevPartition int
+var PrevOffset int64  // helping for rebalancing
+var PrevPartition int //helping for rebancing
 var u bool
+var DBEmailFail bool
+var OffsetFail bool
 
 //printing various scenario to logger during during partition assignment and rebalancing
 func OffsetCases(s int, Partition int) {
@@ -82,6 +84,8 @@ func RecieveAndHandleEmail() {
 	defer r.Close()
 	PrevPartition = -1
 	PrevOffset = 0
+	DBEmailFail = false //indicating that till now their no failure in connecting db as well as email-server
+	OffsetFail = false  //indicating that offset managment mongodb server is running
 	u = true
 	for {
 
@@ -112,12 +116,21 @@ func RecieveAndHandleEmail() {
 		go OffsetMangment(m.Partition, m.Offset, &wg) //update the offset from given partition
 		go EmailMangment(m, &wg)                      //send the email to provided email-id
 		wg.Wait()
-		fsm = fsm + 1
-		PrevOffset = m.Offset
-		if fsm%8 == 0 {
+		if DBEmailFail {
+			//indicating that email server as well as database server id down
+			return
+		}
+
+		if OffsetFail {
+			r.CommitMessages(context.Background(), m)
+			//as the offset mongodb server fail so we have to commit message
+
+		} else if fsm%8 == 0 {
 			r.CommitMessages(context.Background(), m)
 			//commiting to kafka-broker after recieving every 8th message
 		}
+		fsm = fsm + 1
+		PrevOffset = m.Offset
 
 	}
 

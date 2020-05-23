@@ -25,9 +25,12 @@ func send(m []byte, j int) bool {
 	if err != nil {
 		logger.Error(err.Error())
 		//case when email server id down so insert data into database
-		handleInsert(m, j)
-		StateEmail[j] = 1 //it indicate that their is message in  the collection  for jth goroutine database to send
-		return false
+		if handleInsert(m, j) {
+			StateEmail[j] = 1 //it indicate that their is message in  the collection  for jth goroutine database to send
+			return false
+		}
+		DBEmailFail[j] = 1 // indicating failure in connecting database as well as email server
+
 	}
 	logger.Info("Successfully Send", zap.String("Transaction_id", body.Transactionid))
 

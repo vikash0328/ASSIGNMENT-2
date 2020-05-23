@@ -15,6 +15,7 @@ import (
 
 var logger *zap.Logger
 var StateEmail [3]int
+var DBEmailFail [3]int
 
 // binding for message comes from kafka-consumer group
 type Body struct {
@@ -77,6 +78,10 @@ func HandleMessagesParallel(j int, wg *sync.WaitGroup) {
 		logger.Info("metadata", zap.String("Topic", m.Topic), zap.String("Key", string(m.Key)), zap.Int64("Offset", m.Offset))
 		logger.Info(string(m.Value))
 		u = send(m.Value, j) // sending  message to message server
+		if DBEmailFail[j] == 1 {
+			wg.Done()
+			//indicating that their is failure in connecting database as well as email server so end the go routine
+		}
 
 	}
 
@@ -95,10 +100,15 @@ func RecieveAndHandleMail() {
 
 	}
 	wg.Wait()
-
+	// intialise so that database checking does not take place in for loop for fetching messages for first time
 	StateEmail[0] = 0
 	StateEmail[1] = 0
 	StateEmail[2] = 0
+
+	// indicate that their is no error in connecting database as well as email server
+	DBEmailFail[0] = 0
+	DBEmailFail[1] = 0
+	DBEmailFail[2] = 0
 
 	wg.Add(3) //adding 3 go routine for 3 partition
 	for i := 0; i < 3; i++ {
