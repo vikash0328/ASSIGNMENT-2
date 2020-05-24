@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"strconv"
@@ -20,16 +21,19 @@ func postResponse(post handler.Body, t *testing.T) string {
 	r := gin.Default()
 	var request *http.Request
 	if post.Partition == -1 {
-		r.POST("/home", handler.HandlepostPartition)
+		r.POST("/home", handler.Handlepost)
 		req, _ := http.NewRequest("POST", "/home", strings.NewReader(string(b)))
 		request = req
+
 	} else {
 
-		path := "/home/Partition:"
+		path := "/home/:Partition"
 		partition := strconv.Itoa(post.Partition)
-		path = path + partition + "/"
-		r.POST(path, handler.Handlepost)
-		req, _ := http.NewRequest("POST", "/home", strings.NewReader(string(b)))
+		fmt.Println(partition)
+		//path := "/home/" + partition + "/"
+		//context.Set(r, 0, map[string]string{"Partition": partition})
+		r.POST(path, handler.HandlepostPartition)
+		req, _ := http.NewRequest("POST", path, strings.NewReader(string(b)))
 		request = req
 	}
 
@@ -67,10 +71,10 @@ func TestApiResponse(t *testing.T) {
 	body[2] = string([]byte(`{"Body":"your Transaction is Completed","Info":"Message has been sent to provided Partition","message":"Success"}`))
 
 	body[3] = string([]byte(`{"Body":"Couldn't complete your request","message":"Error"}`))
-	//use body when your broker is not working
+	//use body[3] when your broker is not working
 
 	post := handler.Body{
-		Email:         "sunilsn@iitk.ac.in",
+		Email:         "swapnil.bro123@gmail.com",
 		Phone:         "7432094921",
 		MessageBody:   "hellohiytttty",
 		Transactionid: "125456456",
@@ -94,6 +98,7 @@ func TestApiResponse(t *testing.T) {
 		} else if i == 2 {
 			post.Partition = 0
 		}
+		//post.Partition = 0
 		y := postResponse(post, t)
 
 		// Make some assertions on the correctness of the response.

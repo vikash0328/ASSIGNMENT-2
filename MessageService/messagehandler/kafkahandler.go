@@ -16,6 +16,7 @@ import (
 var logger *zap.Logger
 var StateEmail [3]int
 var DBEmailFail [3]int
+var StopInsert [3]bool
 
 // binding for message comes from kafka-consumer group
 type Body struct {
@@ -36,8 +37,10 @@ func PassRefLog(log *zap.Logger) {
 
 // intial case when consumer starts
 func startingFailure(j int, wg *sync.WaitGroup) {
-	//send and delete messages in database if email-sever is up
-	handleFailure(j)
+	StopInsert[j] = true //stop duplicating  message in database if send fail
+	//send and delete messages in database if email-server is up
+	HandleFailure(j)
+	StopInsert[j] = false
 
 	wg.Done()
 }
@@ -64,10 +67,12 @@ func HandleMessagesParallel(j int, wg *sync.WaitGroup) {
 	u := true
 	for {
 		if u && (StateEmail[j] == 1) {
-			handleFailure(j)
+			StopInsert[j] = true //stop duplicating  message in database if send fail
+			HandleFailure(j)
 			//situation when their is message in databse in the collection for jth goroutine and email service is up
+			StopInsert[j] = false
 		}
-		m, err := r.ReadMessage(context.Background()) //getting messages from kafka-consumer group
+		m, err := r.FetchMessage(context.Background()) //getting messages from kafka-consumer group
 		if err != nil {
 			logger.Error(err.Error())
 			break
@@ -77,11 +82,13 @@ func HandleMessagesParallel(j int, wg *sync.WaitGroup) {
 		fmt.Println(m.Partition)
 		logger.Info("metadata", zap.String("Topic", m.Topic), zap.String("Key", string(m.Key)), zap.Int64("Offset", m.Offset))
 		logger.Info(string(m.Value))
-		u = send(m.Value, j) // sending  message to message server
+		u = Send(m.Value, j) // sending  message to message server
 		if DBEmailFail[j] == 1 {
 			wg.Done()
 			//indicating that their is failure in connecting database as well as email server so end the go routine
+			return
 		}
+		r.CommitMessages(context.Background(), m)
 
 	}
 

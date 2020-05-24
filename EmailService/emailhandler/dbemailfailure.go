@@ -64,7 +64,7 @@ func HandleFailure() int {
 		return 0
 	}
 	defer cursor.Close(ctx)
-	//itrating over all messages
+	//iterating over all messages
 	for cursor.Next(ctx) {
 		var b Body
 		cursor.Decode(&b)
@@ -103,7 +103,7 @@ func Send(m []byte) bool {
 	pass := "Let@123#rt"
 	to := body.Email
 	fmt.Println(body)
-	msg := "Your Trnsaction is Completed: " + from + "\n" +
+	msg := "Your Transaction is Completed: " + from + "\n" +
 		"To: " + to + "\n" +
 		"Subject:Transaction\n\n" +
 		"Transaction_id: " + string(body.Transactionid) + "\n" +
@@ -115,6 +115,10 @@ func Send(m []byte) bool {
 
 	if err != nil {
 		logger.Error(err.Error())
+		if StopInsert == true {
+			logger.Warn("Successfully stop Duplicating Message in datbase")
+			return false
+		}
 		//case when email server id down so insert data into database
 		if HandleInsert(m) {
 			State_email = 1 //it indicate that their is message in database to send

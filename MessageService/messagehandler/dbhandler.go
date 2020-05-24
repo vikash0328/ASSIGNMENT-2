@@ -32,7 +32,7 @@ func connect() *mongo.Client {
 }
 
 //case when mail server is down so it will insert given message in database
-func handleInsert(data []byte, j int) bool {
+func HandleInsert(data []byte, j int) bool {
 	var b Body
 	json.Unmarshal(data, &b)
 	client := connect()
@@ -54,7 +54,7 @@ func handleInsert(data []byte, j int) bool {
 	return true
 }
 
-func handleFailure(j int) bool {
+func HandleFailure(j int) bool {
 	client := connect()
 	if client == nil {
 		return false
@@ -76,7 +76,7 @@ func handleFailure(j int) bool {
 		cursor.Decode(&b)
 		d, _ := json.Marshal(b)
 		//send message return true for success for jth goroutine
-		if send([]byte(d), j) {
+		if Send([]byte(d), j) {
 			ctm, _ := context.WithTimeout(context.Background(), 2*time.Second)
 			res, erd := collection.DeleteOne(ctm, bson.M{"_id": b.ID})
 			//error means database is down so return

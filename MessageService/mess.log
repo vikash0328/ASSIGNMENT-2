@@ -52,3 +52,234 @@
 {"level":"INFO","time":"2020-05-22T17:33:21.179+0530","caller":"messagehandler/kafkahandler.go:68","message":"metadata","Topic":"email","Key":"","Offset":161}
 {"level":"INFO","time":"2020-05-22T17:33:21.179+0530","caller":"messagehandler/kafkahandler.go:69","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
 {"level":"INFO","time":"2020-05-22T17:33:26.357+0530","caller":"messagehandler/sendhandler.go:29","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T00:13:57.147+0530","caller":"messagehandler/sendhandler.go:35","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T00:14:03.325+0530","caller":"messagehandler/sendhandler.go:35","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T00:14:10.478+0530","caller":"messagehandler/sendhandler.go:35","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T00:14:12.338+0530","caller":"messagehandler/dbhandler.go:51","message":"Succesfully Inserted"}
+{"level":"INFO","time":"2020-05-24T00:14:12.951+0530","caller":"messagehandler/dbhandler.go:51","message":"Succesfully Inserted"}
+{"level":"INFO","time":"2020-05-24T00:14:14.034+0530","caller":"messagehandler/dbhandler.go:51","message":"Succesfully Inserted"}
+{"level":"INFO","time":"2020-05-24T00:14:18.627+0530","caller":"messagehandler/sendhandler.go:35","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T00:14:18.629+0530","caller":"messagehandler/dbhandler.go:87","message":"Succesfully Delete"}
+{"level":"INFO","time":"2020-05-24T00:14:18.629+0530","caller":"messagehandler/dbhandler.go:88","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T00:14:30.471+0530","caller":"messagehandler/sendhandler.go:35","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T00:14:30.472+0530","caller":"messagehandler/dbhandler.go:87","message":"Succesfully Delete"}
+{"level":"INFO","time":"2020-05-24T00:14:30.472+0530","caller":"messagehandler/dbhandler.go:88","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T00:14:35.617+0530","caller":"messagehandler/sendhandler.go:35","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T00:14:35.618+0530","caller":"messagehandler/dbhandler.go:87","message":"Succesfully Delete"}
+{"level":"INFO","time":"2020-05-24T00:14:35.618+0530","caller":"messagehandler/dbhandler.go:88","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:41:43.210+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":162}
+{"level":"INFO","time":"2020-05-24T08:41:43.226+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T08:42:04.251+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"INFO","time":"2020-05-24T08:42:04.970+0530","caller":"messagehandler/dbhandler.go:51","message":"Succesfully Inserted"}
+{"level":"INFO","time":"2020-05-24T08:42:04.971+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":163}
+{"level":"INFO","time":"2020-05-24T08:42:04.971+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T08:42:25.979+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"INFO","time":"2020-05-24T08:42:26.588+0530","caller":"messagehandler/dbhandler.go:51","message":"Succesfully Inserted"}
+{"level":"INFO","time":"2020-05-24T08:42:26.598+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"123","Offset":164}
+{"level":"INFO","time":"2020-05-24T08:42:26.599+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"123\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T08:42:47.602+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"INFO","time":"2020-05-24T08:42:48.210+0530","caller":"messagehandler/dbhandler.go:51","message":"Succesfully Inserted"}
+{"level":"INFO","time":"2020-05-24T08:42:48.213+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":165}
+{"level":"INFO","time":"2020-05-24T08:42:48.213+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T08:43:07.209+0530","caller":"messagehandler/sendhandler.go:26","message":"EOF"}
+{"level":"INFO","time":"2020-05-24T08:43:07.823+0530","caller":"messagehandler/dbhandler.go:51","message":"Succesfully Inserted"}
+{"level":"INFO","time":"2020-05-24T08:43:07.825+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":166}
+{"level":"INFO","time":"2020-05-24T08:43:07.825+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T08:43:14.932+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:43:21.896+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:43:21.897+0530","caller":"messagehandler/dbhandler.go:87","message":"Succesfully Delete"}
+{"level":"INFO","time":"2020-05-24T08:43:21.897+0530","caller":"messagehandler/dbhandler.go:88","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:43:32.306+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:43:32.306+0530","caller":"messagehandler/dbhandler.go:87","message":"Succesfully Delete"}
+{"level":"INFO","time":"2020-05-24T08:43:32.306+0530","caller":"messagehandler/dbhandler.go:88","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:43:40.046+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:43:40.047+0530","caller":"messagehandler/dbhandler.go:87","message":"Succesfully Delete"}
+{"level":"INFO","time":"2020-05-24T08:43:40.047+0530","caller":"messagehandler/dbhandler.go:88","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:43:47.114+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:43:47.114+0530","caller":"messagehandler/dbhandler.go:87","message":"Succesfully Delete"}
+{"level":"INFO","time":"2020-05-24T08:43:47.114+0530","caller":"messagehandler/dbhandler.go:88","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:43:47.115+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":167}
+{"level":"INFO","time":"2020-05-24T08:43:47.115+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T08:43:54.276+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:43:54.278+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":168}
+{"level":"INFO","time":"2020-05-24T08:43:54.278+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T08:44:00.888+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:44:00.889+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":169}
+{"level":"INFO","time":"2020-05-24T08:44:00.890+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T08:44:06.805+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:44:06.813+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":170}
+{"level":"INFO","time":"2020-05-24T08:44:06.813+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T08:44:14.661+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:44:14.663+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":171}
+{"level":"INFO","time":"2020-05-24T08:44:14.663+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T08:44:23.110+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:44:23.117+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":172}
+{"level":"INFO","time":"2020-05-24T08:44:23.117+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T08:44:28.389+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:44:28.389+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":173}
+{"level":"INFO","time":"2020-05-24T08:44:28.389+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T08:44:34.858+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:44:34.859+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":174}
+{"level":"INFO","time":"2020-05-24T08:44:34.859+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T08:44:41.027+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:44:41.028+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":175}
+{"level":"INFO","time":"2020-05-24T08:44:41.028+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T08:44:45.940+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:44:45.941+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"123","Offset":176}
+{"level":"INFO","time":"2020-05-24T08:44:45.941+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"123\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T08:44:51.894+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:44:51.895+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":177}
+{"level":"INFO","time":"2020-05-24T08:44:51.896+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T08:45:02.394+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:45:02.395+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":178}
+{"level":"INFO","time":"2020-05-24T08:45:02.395+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T08:45:06.818+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:45:06.819+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":179}
+{"level":"INFO","time":"2020-05-24T08:45:06.819+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-24T08:45:13.628+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"ERROR","time":"2020-05-24T08:50:25.216+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T08:50:25.216+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T08:50:25.216+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T08:51:10.299+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":180}
+{"level":"INFO","time":"2020-05-24T08:51:10.300+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":0}"}
+{"level":"ERROR","time":"2020-05-24T08:51:12.718+0530","caller":"messagehandler/sendhandler.go:26","message":"535 5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials i14sm10090035pfo.162 - gsmtp"}
+{"level":"ERROR","time":"2020-05-24T08:51:14.720+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T08:51:14.720+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T08:58:25.165+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":181}
+{"level":"INFO","time":"2020-05-24T08:58:25.168+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-24T08:58:29.390+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T09:03:22.362+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":182}
+{"level":"INFO","time":"2020-05-24T09:03:22.362+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-24T09:03:26.489+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"ERROR","time":"2020-05-24T09:07:09.183+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:07:09.183+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:07:09.183+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:07:18.242+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":183}
+{"level":"INFO","time":"2020-05-24T09:07:18.242+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:07:39.252+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.109:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:07:41.253+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:07:41.253+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T09:07:41.253+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":184}
+{"level":"INFO","time":"2020-05-24T09:07:41.253+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:08:02.257+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.109:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:08:04.259+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:08:04.259+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T09:08:04.259+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":185}
+{"level":"INFO","time":"2020-05-24T09:08:04.259+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"ERROR","time":"2020-05-24T09:08:25.260+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.109:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:08:27.260+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:08:27.260+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"ERROR","time":"2020-05-24T09:12:26.894+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:12:26.894+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:12:26.894+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:12:35.946+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":186}
+{"level":"INFO","time":"2020-05-24T09:12:35.946+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:12:56.955+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.109:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:12:58.955+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:12:58.955+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T09:12:58.955+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":187}
+{"level":"INFO","time":"2020-05-24T09:12:58.956+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:13:19.961+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.109:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:13:21.962+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:13:21.962+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T09:13:21.963+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":188}
+{"level":"INFO","time":"2020-05-24T09:13:21.963+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"ERROR","time":"2020-05-24T09:13:42.968+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.109:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:13:44.968+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:13:44.968+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"ERROR","time":"2020-05-24T09:15:11.893+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:15:11.893+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:15:11.893+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:15:20.953+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":189}
+{"level":"INFO","time":"2020-05-24T09:15:20.953+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:15:41.960+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:15:43.962+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:15:43.962+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T09:15:43.963+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":190}
+{"level":"INFO","time":"2020-05-24T09:15:43.963+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:16:04.966+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:16:06.967+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:16:06.967+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T09:16:06.968+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":191}
+{"level":"INFO","time":"2020-05-24T09:16:06.968+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"ERROR","time":"2020-05-24T09:16:27.971+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:16:29.971+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:16:29.971+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"ERROR","time":"2020-05-24T09:18:45.531+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:18:45.531+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:18:45.531+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:18:54.585+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":192}
+{"level":"INFO","time":"2020-05-24T09:18:54.586+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:19:15.698+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:19:17.700+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:19:17.701+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":193}
+{"level":"INFO","time":"2020-05-24T09:19:17.701+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:19:38.704+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:19:40.705+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:19:40.714+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":194}
+{"level":"INFO","time":"2020-05-24T09:19:40.714+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"ERROR","time":"2020-05-24T09:20:01.716+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:20:03.716+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:23:38.987+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:23:38.987+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:23:38.987+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:23:48.034+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":195}
+{"level":"INFO","time":"2020-05-24T09:23:48.034+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:24:09.039+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:24:11.040+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:24:11.041+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":196}
+{"level":"INFO","time":"2020-05-24T09:24:11.041+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:24:32.046+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:24:34.046+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:24:34.047+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":197}
+{"level":"INFO","time":"2020-05-24T09:24:34.047+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"ERROR","time":"2020-05-24T09:24:55.051+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:24:57.052+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:26:38.618+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:26:38.618+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:26:38.618+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:26:47.664+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":197}
+{"level":"INFO","time":"2020-05-24T09:26:47.664+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"ERROR","time":"2020-05-24T09:27:08.669+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:27:10.670+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:30:18.080+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:30:18.080+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:30:18.080+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:30:27.128+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":198}
+{"level":"INFO","time":"2020-05-24T09:30:27.128+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:30:48.136+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:30:50.138+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:31:06.160+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":198}
+{"level":"INFO","time":"2020-05-24T09:31:06.160+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:31:27.164+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:31:29.165+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:31:45.168+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":198}
+{"level":"INFO","time":"2020-05-24T09:31:45.168+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:32:06.172+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"ERROR","time":"2020-05-24T09:32:08.174+0530","caller":"messagehandler/dbhandler.go:48","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:32:20.349+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:32:20.349+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"ERROR","time":"2020-05-24T09:32:20.349+0530","caller":"messagehandler/dbhandler.go:69","message":"context deadline exceeded"}
+{"level":"INFO","time":"2020-05-24T09:32:45.179+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":198}
+{"level":"INFO","time":"2020-05-24T09:32:45.179+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-24T09:34:04.323+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"14244","Offset":198}
+{"level":"INFO","time":"2020-05-24T09:34:04.327+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:34:25.432+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"INFO","time":"2020-05-24T09:34:26.040+0530","caller":"messagehandler/dbhandler.go:51","message":"Succesfully Inserted"}
+{"level":"INFO","time":"2020-05-24T09:34:26.042+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":199}
+{"level":"INFO","time":"2020-05-24T09:34:26.042+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"ERROR","time":"2020-05-24T09:34:47.044+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"INFO","time":"2020-05-24T09:34:47.649+0530","caller":"messagehandler/dbhandler.go:51","message":"Succesfully Inserted"}
+{"level":"INFO","time":"2020-05-24T09:34:47.650+0530","caller":"messagehandler/kafkahandler.go:83","message":"metadata","Topic":"email","Key":"","Offset":200}
+{"level":"INFO","time":"2020-05-24T09:34:47.650+0530","caller":"messagehandler/kafkahandler.go:84","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"ERROR","time":"2020-05-24T09:35:08.651+0530","caller":"messagehandler/sendhandler.go:26","message":"dial tcp 74.125.24.108:587: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"INFO","time":"2020-05-24T09:35:09.260+0530","caller":"messagehandler/dbhandler.go:51","message":"Succesfully Inserted"}
+{"level":"INFO","time":"2020-05-24T09:36:47.432+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T09:36:47.436+0530","caller":"messagehandler/dbhandler.go:87","message":"Succesfully Delete"}
+{"level":"INFO","time":"2020-05-24T09:36:47.436+0530","caller":"messagehandler/dbhandler.go:88","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T09:36:53.908+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T09:36:53.909+0530","caller":"messagehandler/dbhandler.go:87","message":"Succesfully Delete"}
+{"level":"INFO","time":"2020-05-24T09:36:53.909+0530","caller":"messagehandler/dbhandler.go:88","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T09:36:58.698+0530","caller":"messagehandler/sendhandler.go:40","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-24T09:36:58.699+0530","caller":"messagehandler/dbhandler.go:87","message":"Succesfully Delete"}
+{"level":"INFO","time":"2020-05-24T09:36:58.700+0530","caller":"messagehandler/dbhandler.go:88","message":"Successfully Send","Transaction_id":"125456456"}

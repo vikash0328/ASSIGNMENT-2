@@ -26,7 +26,7 @@ func TestOffsetManagment(t *testing.T) {
 	  when new partition comes in kafka broker so first it will insert it i.e. return 2
 
 
-	  when partition exit and offset of provided partition is greater than the offset in
+	  when partition exist and offset of provided partition is greater than the offset in
 	  database then it should update its offset i.e. return 3
 
 
