@@ -70,7 +70,7 @@ func HandleFailure(j int) bool {
 		return false
 	}
 	defer cursor.Close(ctx)
-	//itrating over all messages for jth goroutine
+	//iterating over all messages for jth goroutine
 	for cursor.Next(ctx) {
 		var b Body
 		cursor.Decode(&b)

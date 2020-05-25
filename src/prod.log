@@ -76,3 +76,19 @@
 {"level":"INFO","time":"2020-05-24T09:30:09.372+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
 {"level":"INFO","time":"2020-05-24T09:30:10.399+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
 {"level":"INFO","time":"2020-05-24T09:30:10.430+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
+{"level":"ERROR","time":"2020-05-25T14:39:12.513+0530","caller":"handler/handlerwithoutpartition.go:58","message":"[5] Leader Not Available: the cluster is in the middle of a leadership election and there is currently no leader for this partition and hence it is unavailable for writes"}
+{"level":"ERROR","time":"2020-05-25T14:42:11.896+0530","caller":"handler/handlerwithoutpartition.go:58","message":"dial tcp 192.168.99.100:19092: connectex: No connection could be made because the target machine actively refused it."}
+{"level":"ERROR","time":"2020-05-25T14:51:39.422+0530","caller":"handler/handlerwithoutpartition.go:58","message":"dial tcp [::1]:19092: connectex: No connection could be made because the target machine actively refused it."}
+{"level":"ERROR","time":"2020-05-25T15:07:19.826+0530","caller":"handler/handlerwithoutpartition.go:58","message":"dial tcp [::1]:19092: connectex: No connection could be made because the target machine actively refused it."}
+{"level":"ERROR","time":"2020-05-25T15:07:47.411+0530","caller":"handler/handlerwithoutpartition.go:58","message":"dial tcp [::1]:9092: connectex: No connection could be made because the target machine actively refused it."}
+{"level":"ERROR","time":"2020-05-25T15:11:08.648+0530","caller":"handler/handlerwithoutpartition.go:58","message":"dial tcp [::1]:9092: connectex: No connection could be made because the target machine actively refused it."}
+{"level":"INFO","time":"2020-05-25T15:12:37.246+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
+{"level":"INFO","time":"2020-05-25T15:12:38.277+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
+{"level":"INFO","time":"2020-05-25T15:12:38.319+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
+{"level":"ERROR","time":"2020-05-25T15:26:07.699+0530","caller":"handler/handlerwithoutpartition.go:58","message":"dial tcp [::1]:9092: connectex: No connection could be made because the target machine actively refused it."}
+{"level":"INFO","time":"2020-05-25T21:52:23.151+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
+{"level":"INFO","time":"2020-05-25T21:52:24.209+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
+{"level":"INFO","time":"2020-05-25T21:52:24.263+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-25T22:09:15.440+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
+{"level":"INFO","time":"2020-05-25T22:09:16.473+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
+{"level":"INFO","time":"2020-05-25T22:09:16.785+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}

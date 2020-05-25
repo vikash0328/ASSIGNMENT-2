@@ -99,7 +99,7 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zk1:22181,zk2:32181,zk3:42181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:19092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://0.0.0.0:19092
     volumes:
       - ./kafka/kafka1/data:/var/lib/kafka/data
       # - ./kafka/kafka3/secrets:/var/lib/kafka/secrets
@@ -116,7 +116,7 @@ services:
     environment:
       KAFKA_BROKER_ID: 2
       KAFKA_ZOOKEEPER_CONNECT: zk1:22181,zk2:32181,zk3:42181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://0.0.0.0:29092
     volumes:
       - ./kafka/kafka2/data:/var/lib/kafka/data
       # - ./kafka/kafka3/secrets:/var/lib/kafka/secrets
@@ -133,7 +133,7 @@ services:
     environment:
       KAFKA_BROKER_ID: 3
       KAFKA_ZOOKEEPER_CONNECT: zk1:22181,zk2:32181,zk3:42181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:39092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://0.0.0.0:39092
     volumes:
       - ./kafka/kafka3/data:/var/lib/kafka/data
       # - ./kafka/kafka3/secrets:/var/lib/kafka/secrets

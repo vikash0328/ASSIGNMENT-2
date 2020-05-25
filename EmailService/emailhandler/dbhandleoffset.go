@@ -69,11 +69,11 @@ func PartitionInsertIntial(partition int, offset int64) bool {
 }
 
 // update the offset  of provided  partition when new message comes to partition
-func UpdateOffset(partition int, offset int64) {
+func UpdateOffset(j int, partition int, offset int64) {
 	client := connect()
 	if client == nil {
 		logger.Warn("Their is Problem in Database Connction")
-		OffsetFail = true
+		OffsetFail[j] = true
 		return
 	}
 
@@ -86,9 +86,10 @@ func UpdateOffset(partition int, offset int64) {
 	updateResult, err := collection.UpdateOne(ctx, filter, update)
 	if err != nil {
 		logger.Fatal(err.Error())
-		OffsetFail = true
+		OffsetFail[j] = true
 		return
 	}
+	OffsetFail[j] = false
 	fmt.Println(updateResult)
 	logger.Info("Upadated the count of Offset", zap.Int("Partition", partition), zap.Int64("Offset", offset))
 }
@@ -128,6 +129,6 @@ func Check(partition int, offset int64) int {
 			return 0
 		}
 	}
-
+	logger.Info("Stopped Duplicating message", zap.Int64("offset:", offset))
 	return 1
 }

@@ -317,3 +317,147 @@
 {"level":"INFO","time":"2020-05-24T08:44:43.647+0530","caller":"emailhandler/kafkarecieve.go:57","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
 {"level":"INFO","time":"2020-05-24T08:44:44.253+0530","caller":"emailhandler/dbhandleoffset.go:93","message":"Upadated the count of Offset","Partition":0,"Offset":179}
 {"level":"INFO","time":"2020-05-24T08:44:49.004+0530","caller":"emailhandler/dbemailfailure.go:129","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:12:51.967+0530","caller":"emailhandler/kafkarecieve.go:32","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-25T15:12:51.988+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":179}
+{"level":"INFO","time":"2020-05-25T15:12:51.988+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-25T15:12:52.641+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":179}
+{"level":"WARN","time":"2020-05-25T15:12:52.641+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:13:04.659+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:13:05.935+0530","caller":"emailhandler/dbhandleoffset.go:122","message":"Upadated the count of Offset"}
+{"level":"INFO","time":"2020-05-25T15:13:05.935+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"14244","Offset":180}
+{"level":"WARN","time":"2020-05-25T15:13:05.935+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:13:05.935+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-25T15:13:11.915+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:13:11.915+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"14244","Offset":181}
+{"level":"INFO","time":"2020-05-25T15:13:11.915+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-25T15:13:12.535+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":181}
+{"level":"WARN","time":"2020-05-25T15:13:12.537+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:13:18.045+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:13:18.046+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"14244","Offset":182}
+{"level":"INFO","time":"2020-05-25T15:13:18.046+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-25T15:13:18.655+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":182}
+{"level":"WARN","time":"2020-05-25T15:13:18.655+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:13:27.403+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:13:27.404+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"14244","Offset":183}
+{"level":"INFO","time":"2020-05-25T15:13:27.404+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T15:13:28.013+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":183}
+{"level":"WARN","time":"2020-05-25T15:13:28.013+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:13:34.750+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:13:34.750+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":184}
+{"level":"INFO","time":"2020-05-25T15:13:34.750+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T15:13:35.358+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":184}
+{"level":"WARN","time":"2020-05-25T15:13:35.358+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:13:46.180+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:13:46.181+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":185}
+{"level":"INFO","time":"2020-05-25T15:13:46.181+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-25T15:13:46.791+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":185}
+{"level":"WARN","time":"2020-05-25T15:13:46.791+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:13:52.970+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:13:52.970+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"14244","Offset":186}
+{"level":"INFO","time":"2020-05-25T15:13:52.970+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T15:13:53.583+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":186}
+{"level":"WARN","time":"2020-05-25T15:13:53.583+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:13:58.912+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:13:58.913+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":187}
+{"level":"INFO","time":"2020-05-25T15:13:58.913+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T15:13:59.528+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":187}
+{"level":"WARN","time":"2020-05-25T15:13:59.528+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:14:04.510+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:14:04.510+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":188}
+{"level":"INFO","time":"2020-05-25T15:14:04.510+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-25T15:14:05.122+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":188}
+{"level":"WARN","time":"2020-05-25T15:14:05.122+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:14:13.923+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:14:13.923+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"14244","Offset":189}
+{"level":"INFO","time":"2020-05-25T15:14:13.923+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T15:14:14.532+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":189}
+{"level":"WARN","time":"2020-05-25T15:14:14.532+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:14:20.861+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:14:20.861+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":190}
+{"level":"INFO","time":"2020-05-25T15:14:20.862+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T15:14:21.471+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":190}
+{"level":"WARN","time":"2020-05-25T15:14:21.472+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:14:27.469+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:14:27.469+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":191}
+{"level":"INFO","time":"2020-05-25T15:14:27.469+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-25T15:14:28.083+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":191}
+{"level":"WARN","time":"2020-05-25T15:14:28.083+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:14:33.663+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:14:33.663+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"14244","Offset":192}
+{"level":"INFO","time":"2020-05-25T15:14:33.663+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T15:14:34.273+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":192}
+{"level":"WARN","time":"2020-05-25T15:14:34.273+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:14:43.584+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:14:43.585+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":193}
+{"level":"INFO","time":"2020-05-25T15:14:43.585+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T15:14:44.317+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":193}
+{"level":"WARN","time":"2020-05-25T15:14:44.317+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:14:50.837+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:14:50.837+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":194}
+{"level":"INFO","time":"2020-05-25T15:14:50.837+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-25T15:14:51.448+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":194}
+{"level":"WARN","time":"2020-05-25T15:14:51.448+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:14:56.818+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:14:56.818+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"14244","Offset":195}
+{"level":"INFO","time":"2020-05-25T15:14:56.819+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T15:14:57.430+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":195}
+{"level":"WARN","time":"2020-05-25T15:14:57.431+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:15:14.360+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:15:14.360+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":196}
+{"level":"INFO","time":"2020-05-25T15:15:14.360+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T15:15:14.972+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":196}
+{"level":"WARN","time":"2020-05-25T15:15:14.972+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:15:18.619+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:15:18.619+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":197}
+{"level":"INFO","time":"2020-05-25T15:15:18.619+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-25T15:15:19.229+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":197}
+{"level":"WARN","time":"2020-05-25T15:15:19.229+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:15:24.033+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:15:24.033+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"14244","Offset":198}
+{"level":"INFO","time":"2020-05-25T15:15:24.033+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T15:15:24.651+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":198}
+{"level":"WARN","time":"2020-05-25T15:15:24.651+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:15:32.318+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:15:32.318+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":199}
+{"level":"INFO","time":"2020-05-25T15:15:32.318+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T15:15:32.926+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":199}
+{"level":"WARN","time":"2020-05-25T15:15:32.926+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:15:42.335+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T15:15:42.335+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":200}
+{"level":"INFO","time":"2020-05-25T15:15:42.335+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-25T15:15:42.944+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":200}
+{"level":"WARN","time":"2020-05-25T15:15:42.944+0530","caller":"emailhandler/kafkarecieve.go:49","message":"Goroutine Stopped","Goroutine NO:":0}
+{"level":"INFO","time":"2020-05-25T15:15:48.355+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T21:52:55.474+0530","caller":"emailhandler/dbhandleoffset.go:132","message":"Stopped Duplicating message","offset:":0}
+{"level":"INFO","time":"2020-05-25T21:52:55.479+0530","caller":"emailhandler/kafkarecieve.go:32","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-25T22:01:25.920+0530","caller":"emailhandler/kafkarecieve.go:35","message":"Your New Partion SuccesFully Entered","NewPartion:":0}
+{"level":"INFO","time":"2020-05-25T22:01:25.928+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"14244","Offset":0}
+{"level":"INFO","time":"2020-05-25T22:01:25.928+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T22:01:26.541+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":0}
+{"level":"INFO","time":"2020-05-25T22:01:34.470+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T22:01:35.749+0530","caller":"emailhandler/dbhandleoffset.go:122","message":"Upadated the count of Offset"}
+{"level":"INFO","time":"2020-05-25T22:01:35.749+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":1}
+{"level":"INFO","time":"2020-05-25T22:01:35.749+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T22:01:40.381+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T22:01:40.381+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":2}
+{"level":"INFO","time":"2020-05-25T22:01:40.381+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-25T22:01:40.988+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":2}
+{"level":"INFO","time":"2020-05-25T22:01:45.119+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T22:09:10.097+0530","caller":"emailhandler/dbhandleoffset.go:132","message":"Stopped Duplicating message","offset:":1}
+{"level":"INFO","time":"2020-05-25T22:09:10.098+0530","caller":"emailhandler/kafkarecieve.go:32","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-25T22:56:50.307+0530","caller":"emailhandler/dbhandleoffset.go:132","message":"Stopped Duplicating message","offset:":1}
+{"level":"INFO","time":"2020-05-25T22:56:50.309+0530","caller":"emailhandler/kafkarecieve.go:32","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-25T22:56:51.523+0530","caller":"emailhandler/dbhandleoffset.go:132","message":"Stopped Duplicating message","offset:":2}
+{"level":"INFO","time":"2020-05-25T22:56:51.523+0530","caller":"emailhandler/kafkarecieve.go:32","message":"SuccesFully Stop From Duplicating Message"}
+{"level":"INFO","time":"2020-05-25T22:56:52.742+0530","caller":"emailhandler/dbhandleoffset.go:122","message":"Upadated the count of Offset"}
+{"level":"INFO","time":"2020-05-25T22:56:52.743+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"14244","Offset":3}
+{"level":"INFO","time":"2020-05-25T22:56:52.743+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"14244\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T22:56:57.414+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T22:56:57.414+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":4}
+{"level":"INFO","time":"2020-05-25T22:56:57.415+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":-1}"}
+{"level":"INFO","time":"2020-05-25T22:56:58.024+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":4}
+{"level":"INFO","time":"2020-05-25T22:57:01.834+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
+{"level":"INFO","time":"2020-05-25T22:57:01.834+0530","caller":"emailhandler/kafkarecieve.go:58","message":"metadata","Topic":"email","Key":"","Offset":5}
+{"level":"INFO","time":"2020-05-25T22:57:01.834+0530","caller":"emailhandler/kafkarecieve.go:59","message":"{\"Email\":\"swapnil.bro123@gmail.com\",\"Phone\":\"7432094921\",\"MessageBody\":\"hellohiytttty\",\"Transactionid\":\"125456456\",\"Customerid\":\"347656r76789\",\"Key\":\"\",\"partition\":0}"}
+{"level":"INFO","time":"2020-05-25T22:57:02.496+0530","caller":"emailhandler/dbhandleoffset.go:94","message":"Upadated the count of Offset","Partition":0,"Offset":5}
+{"level":"INFO","time":"2020-05-25T22:57:05.991+0530","caller":"emailhandler/dbemailfailure.go:131","message":"Successfully Send","Transaction_id":"125456456"}
