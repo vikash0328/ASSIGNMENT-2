@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"sync"
 	"time"
-
+	"strings"
 	"github.com/segmentio/kafka-go"
 	"github.com/spf13/viper"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -49,7 +49,7 @@ func startingFailure(j int, wg *sync.WaitGroup) {
 func kakfareader() *kafka.Reader {
 
 	r := kafka.NewReader(kafka.ReaderConfig{
-		Brokers:        []string{viper.GetString("Brokers")},
+		Brokers:        strings.Split(viper.GetString("Brokers"), ","),
 		GroupID:        viper.GetString("GroupName"),
 		Topic:          viper.GetString("Topic"),
 		CommitInterval: 5 * time.Second,

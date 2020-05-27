@@ -74,7 +74,7 @@ func TestApiResponse(t *testing.T) {
 	//use body[3] when your broker is not working
 
 	post := handler.Body{
-		Email:         "swapnil.bro123@gmail.com",
+		Email:         "vikasharya0328@gmail.com",
 		Phone:         "7432094921",
 		MessageBody:   "hellohiytttty",
 		Transactionid: "125456456",

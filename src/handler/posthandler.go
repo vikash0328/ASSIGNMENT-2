@@ -3,7 +3,9 @@ package handler
 import (
 	"context"
 	"time"
-
+	"math/rand"
+	"strings"
+	"fmt"
 	"github.com/segmentio/kafka-go"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
@@ -20,7 +22,10 @@ import (
 ******************************************************************************************************/
 
 func WriteMessagewithPartition(partition int, key []byte, value []byte, logger *zap.Logger) int {
-	conn, err := kafka.DialLeader(context.Background(), "tcp", viper.GetString("Brokers"), viper.GetString("Topic"), partition)
+	x := rand.Intn(3)
+	a := strings.Split(viper.GetString("Brokers"), ",")[x]
+	fmt.Println(a)
+	conn, err := kafka.DialLeader(context.Background(), "tcp", a, viper.GetString("Topic"), partition)
 	if err == nil {
 		conn.SetWriteDeadline(time.Now().Add(10 * time.Second))
 		_, errt := conn.WriteMessages(

@@ -2,7 +2,7 @@ package handler
 
 import (
 	"context"
-
+	"strings"
 	"github.com/segmentio/kafka-go"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
@@ -21,7 +21,7 @@ import (
 func Getkafkawriter() *kafka.Writer {
 
 	w := kafka.NewWriter(kafka.WriterConfig{
-		Brokers:  []string{viper.GetString("Brokers")},
+		Brokers:  strings.Split(viper.GetString("Brokers"), ","),
 		Topic:    viper.GetString("Topic"),
 		Balancer: &kafka.LeastBytes{},
 	})

@@ -3,6 +3,7 @@ package emailhandler
 import (
 	"context"
 	"encoding/json"
+	"strings"
 	"sync"
 	"time"
 
@@ -104,9 +105,14 @@ func parallelHandleEmail(j int, wg *sync.WaitGroup) {
 			wg1.Wait()
 
 			if DBEmailFail[j] {
-				OffsetMangment(j, m.Partition, m.Offset-1, &wg1)
+				if !OffsetFail[j] {
+					wg1.Add(1)
+					OffsetMangment(j, m.Partition, m.Offset-1, &wg1)
+					wg1.Done()
+				}
 				//indicating that email server as well as database server id down
 				logger.Warn("Goroutine stopped", zap.Int("Goroutineid:", j))
+				wg.Done()
 				return
 			}
 
@@ -114,7 +120,7 @@ func parallelHandleEmail(j int, wg *sync.WaitGroup) {
 				r.CommitMessages(context.Background(), m)
 				//as the offset mongodb server fail so we have to commit message
 
-			} else if fsm[j]%8 == 0 {
+			} else if fsm[j]%3 == 0 {
 				r.CommitMessages(context.Background(), m)
 				//commiting to kafka-broker after recieving every 8th message
 			}
@@ -133,7 +139,7 @@ func parallelHandleEmail(j int, wg *sync.WaitGroup) {
 func kafkareader() *kafka.Reader {
 
 	r := kafka.NewReader(kafka.ReaderConfig{
-		Brokers:        []string{viper.GetString("Brokers")},
+		Brokers:        strings.Split(viper.GetString("Brokers"), ","),
 		GroupID:        viper.GetString("GroupName"),
 		Topic:          viper.GetString("Topic"),
 		CommitInterval: 5 * time.Second,

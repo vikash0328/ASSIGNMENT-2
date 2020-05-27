@@ -1,94 +1,36 @@
-{"level":"ERROR","time":"2020-05-16T11:24:58.524+0530","caller":"src/mainp.go:88","message":"dial tcp [::1]:19092: connectex: No connection could be made because the target machine actively refused it."}
-{"level":"ERROR","time":"2020-05-20T19:13:44.210+0530","caller":"src/main.go:56","message":"dial tcp [::1]:9092: connectex: No connection could be made because the target machine actively refused it."}
-{"level":"ERROR","time":"2020-05-20T19:14:48.578+0530","caller":"src/main.go:159","message":"dial tcp [::1]:9092: connectex: No connection could be made because the target machine actively refused it."}
-{"level":"ERROR","time":"2020-05-21T00:22:32.962+0530","caller":"src/main.go:159","message":"[5] Leader Not Available: the cluster is in the middle of a leadership election and there is currently no leader for this partition and hence it is unavailable for writes"}
-{"level":"ERROR","time":"2020-05-21T00:28:56.799+0530","caller":"src/main.go:159","message":"dial tcp [::1]:9092: connectex: No connection could be made because the target machine actively refused it."}
-{"level":"ERROR","time":"2020-05-21T09:20:00.108+0530","caller":"src/main.go:107","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-21T09:26:02.699+0530","caller":"src/main.go:107","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-21T10:59:55.291+0530","caller":"src/main.go:145","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-21T23:55:54.518+0530","caller":"src/main.go:102","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-21T23:59:29.872+0530","caller":"src/main.go:93","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T00:12:44.126+0530","caller":"handler/posthandler.go:28","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T00:21:05.336+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T00:41:24.185+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T00:45:39.371+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T00:48:31.863+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T00:53:07.454+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T01:15:46.055+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T01:46:04.324+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T01:46:25.451+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T01:49:29.814+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T01:53:12.952+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T02:00:42.238+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T02:04:13.491+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T02:05:23.264+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T02:05:45.952+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T02:07:24.431+0530","caller":"handler/posthandler.go:28","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T02:20:46.873+0530","caller":"handler/posthandler.go:28","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T11:13:26.461+0530","caller":"handler/posthandler.go:28","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T11:14:02.151+0530","caller":"handler/posthandler.go:28","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"ERROR","time":"2020-05-22T11:14:35.073+0530","caller":"handler/handlerwithoutpartition.go:49","message":"dial tcp 192.168.99.100:9092: i/o timeout"}
-{"level":"INFO","time":"2020-05-22T11:16:19.469+0530","caller":"handler/handlerwithoutpartition.go:44","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-22T11:17:57.235+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-22T13:10:23.686+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-22T14:27:15.671+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-22T14:27:40.264+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-22T14:30:50.836+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-22T14:31:25.216+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-22T15:21:00.488+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-22T17:33:18.774+0530","caller":"handler/posthandler.go:24","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-23T20:40:36.956+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-23T20:41:00.826+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-23T20:41:13.211+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"123"}
-{"level":"INFO","time":"2020-05-23T20:44:53.697+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-23T20:48:54.175+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-23T20:48:55.197+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-23T20:50:21.352+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-23T20:50:22.393+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-23T21:00:53.533+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-23T21:00:54.569+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-23T21:01:42.993+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-23T21:01:44.058+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-23T21:04:02.656+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-23T21:04:03.701+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-23T21:05:46.611+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-23T21:07:43.988+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-23T21:07:45.038+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-23T21:07:45.085+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-24T08:51:01.732+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-24T08:58:18.157+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-24T09:03:18.226+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-24T09:07:14.862+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-24T09:07:15.897+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-24T09:07:15.938+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-24T09:12:34.176+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-24T09:12:35.233+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-24T09:12:35.272+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-24T09:15:01.763+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-24T09:15:02.804+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-24T09:15:02.849+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-24T09:18:36.984+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-24T09:18:38.032+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-24T09:18:38.069+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-24T09:23:28.540+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-24T09:23:29.584+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-24T09:23:29.635+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-24T09:30:09.372+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-24T09:30:10.399+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-24T09:30:10.430+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"ERROR","time":"2020-05-25T14:39:12.513+0530","caller":"handler/handlerwithoutpartition.go:58","message":"[5] Leader Not Available: the cluster is in the middle of a leadership election and there is currently no leader for this partition and hence it is unavailable for writes"}
-{"level":"ERROR","time":"2020-05-25T14:42:11.896+0530","caller":"handler/handlerwithoutpartition.go:58","message":"dial tcp 192.168.99.100:19092: connectex: No connection could be made because the target machine actively refused it."}
-{"level":"ERROR","time":"2020-05-25T14:51:39.422+0530","caller":"handler/handlerwithoutpartition.go:58","message":"dial tcp [::1]:19092: connectex: No connection could be made because the target machine actively refused it."}
-{"level":"ERROR","time":"2020-05-25T15:07:19.826+0530","caller":"handler/handlerwithoutpartition.go:58","message":"dial tcp [::1]:19092: connectex: No connection could be made because the target machine actively refused it."}
-{"level":"ERROR","time":"2020-05-25T15:07:47.411+0530","caller":"handler/handlerwithoutpartition.go:58","message":"dial tcp [::1]:9092: connectex: No connection could be made because the target machine actively refused it."}
-{"level":"ERROR","time":"2020-05-25T15:11:08.648+0530","caller":"handler/handlerwithoutpartition.go:58","message":"dial tcp [::1]:9092: connectex: No connection could be made because the target machine actively refused it."}
-{"level":"INFO","time":"2020-05-25T15:12:37.246+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-25T15:12:38.277+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-25T15:12:38.319+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"ERROR","time":"2020-05-25T15:26:07.699+0530","caller":"handler/handlerwithoutpartition.go:58","message":"dial tcp [::1]:9092: connectex: No connection could be made because the target machine actively refused it."}
-{"level":"INFO","time":"2020-05-25T21:52:23.151+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-25T21:52:24.209+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-25T21:52:24.263+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
-{"level":"INFO","time":"2020-05-25T22:09:15.440+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
-{"level":"INFO","time":"2020-05-25T22:09:16.473+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
-{"level":"INFO","time":"2020-05-25T22:09:16.785+0530","caller":"handler/posthandler.go:34","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-26T11:21:36.227+0530","caller":"handler/posthandler.go:37","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-26T11:24:04.036+0530","caller":"handler/posthandler.go:37","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-26T11:27:19.520+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-26T11:29:12.059+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-26T11:29:37.747+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-26T11:40:49.249+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":2}
+{"level":"INFO","time":"2020-05-26T11:51:36.617+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":2}
+{"level":"INFO","time":"2020-05-26T11:56:53.808+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":2}
+{"level":"INFO","time":"2020-05-26T12:06:32.653+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":2}
+{"level":"INFO","time":"2020-05-26T12:10:06.333+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":2}
+{"level":"INFO","time":"2020-05-26T12:10:36.895+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":2}
+{"level":"INFO","time":"2020-05-27T05:40:46.972+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":2}
+{"level":"INFO","time":"2020-05-27T05:43:43.760+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"18"}
+{"level":"INFO","time":"2020-05-27T10:41:36.411+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":2}
+{"level":"INFO","time":"2020-05-27T10:46:08.195+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
+{"level":"INFO","time":"2020-05-27T10:46:09.221+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
+{"level":"INFO","time":"2020-05-27T10:46:09.241+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-27T10:46:24.144+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
+{"level":"INFO","time":"2020-05-27T10:46:25.194+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
+{"level":"INFO","time":"2020-05-27T10:46:25.231+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-27T11:48:39.691+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"18"}
+{"level":"INFO","time":"2020-05-27T11:50:03.786+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
+{"level":"INFO","time":"2020-05-27T11:51:04.039+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":2}
+{"level":"INFO","time":"2020-05-27T11:56:05.484+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":2}
+{"level":"INFO","time":"2020-05-27T11:56:55.161+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
+{"level":"INFO","time":"2020-05-27T11:56:56.185+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
+{"level":"INFO","time":"2020-05-27T11:56:56.199+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-27T11:57:32.378+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
+{"level":"INFO","time":"2020-05-27T11:57:33.401+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
+{"level":"INFO","time":"2020-05-27T11:57:33.425+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-27T11:59:50.819+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
+{"level":"INFO","time":"2020-05-27T11:59:51.881+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
+{"level":"INFO","time":"2020-05-27T11:59:51.888+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":0}
+{"level":"INFO","time":"2020-05-27T12:00:16.973+0530","caller":"handler/handlerwithoutpartition.go:50","message":"Message Successfully Send","key":"14244"}
+{"level":"INFO","time":"2020-05-27T12:00:18.007+0530","caller":"handler/handlerwithoutpartition.go:53","message":"Meassage send succesfully without key"}
+{"level":"INFO","time":"2020-05-27T12:00:18.025+0530","caller":"handler/posthandler.go:39","message":"Message send to Partition","Partition":0}

@@ -101,8 +101,8 @@ func Send(m []byte, j int) bool {
 	//binding for converting byte data struct type Body
 	json.Unmarshal(m, &body)
 
-	from := "swapnil.bro123@gmail.com"
-	pass := "Let@123#rt"
+	from := "..."
+	pass := "..."
 	to := body.Email
 	fmt.Println(body)
 	msg := "Your Transaction is Completed: " + from + "\n" +
@@ -127,6 +127,7 @@ func Send(m []byte, j int) bool {
 			return false
 		}
 		DBEmailFail[j] = true
+		return false
 	}
 	logger.Info("Successfully Send", zap.String("Transaction_id", body.Transactionid))
 

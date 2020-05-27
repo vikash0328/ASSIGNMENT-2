@@ -13,8 +13,8 @@ func Send(m []byte, j int) bool {
 	//binding for converting byte data struct type Body
 	json.Unmarshal(m, &body)
 
-	from := "swapnil.bro123@gmail.com"
-	pass := "Let@123#rt"
+	from := "..."
+	pass := "..."
 	to := body.Phone + "@sms.clicksend.com" // receivers mobile number +N number  format
 	msg := "Your Transaction is Completed:" + "\n" + "Transaction_id: " + string(body.Transactionid) + "\n" + "Customer_id: " + string(body.Customerid) + "\n"
 
